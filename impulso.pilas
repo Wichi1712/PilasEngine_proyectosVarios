@@ -1,0 +1,1485 @@
+{
+    "titulo": "Proyecto demo",
+    "ancho": 500,
+    "alto": 500,
+    "tamaño": "500x500",
+    "nombre_de_la_escena_inicial": "escena0",
+    "imagenes": [
+        {
+            "nombre": "naveespacial",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAgCAYAAADaInAlAAADVElEQVR4Xu1bO5LUMBD1BrsBJ5giMFUQwC1gOQYH5Bgs3AICqGICak6wwRIM1fK0/NRufSzJQ+1MO5mPLD3p9VN3S7JvBruumoGbhtEfRd2Wtmq6Yfgha1X8V1UahsGR//PrrevCmw9/uSu17a0VgOF34r/WYMeHz7fD+HKy2/7PMNx/ciKobW+1AAy/D/+1BjMBXMgEMAGs9T3T/RczAUwAJoAqBi5mBlSN/so9gMvAI0nYORJBw+/I/5oQ4NfdZHy63t3v3ef3h9F9nlYCWy0JDf/EbE/+pQCYZPV/nvUv3k6Gl9fjjxGXhJo3iLXPTV01/jiOx/3ecXs2/hEId9YWHWDV0dqfBLDb7QL7Hw6HgQUA3iAmsJQ41DLDn7xub/7ZQH5n7bSrtxAGxvyUAKiTsDEkjXmk3UNl59DwTzt75+bfCyCyresTLlQffdc8AP2veAEWgbZ9a/iTH3UTgy4xOTbnnwwQGAY64crQ9VIZzv5f3+5cp1+/f3KfHAbYC4hQ4AcpBurqMgGG70VwFv49CO/rS+Og60cBsPE5ESARoACUUBAYGcOExIBZECw3DX+egL34VwVAxsGLxMFGwZka3jX9wvu0drhOSgCGfz7+swLgtT0nbyUCwESPQwgNCb1MqQAMfzpq34r/pACQfJ7dpQJAbyDzCBkeZAhgD2D4s/G34j8pAC0vKBGATOrYoGs9gOHPoaAmBGO4jXngIgFgUlYqABRBqwAM3z9xFSTSqRyslP+sAFB59L1EAJgD0PcWARh+Ww6Q439VDqApLvUfG69XDmD46xgo4T/rAUoMnPMKLR7A8OMMlOYFKf6LBIBKosRM7PW7HnImj2UsjFYBGP4UBjSOWR61/GcFoO3KKU8B+yeEpDhyMQgHpmWthj8ngIqR/VlKTBw5/qMCgIc7UiBFZTEjM4a2D2D4i3cttEnWzH/uLCA4Fl6pwMWRMuYKhWcBhj+nALUCoBYWB37MfyCAzBs+8lUsajh4nkCkK/JhkKAjmgAMP/mG1Sb8++NgMJ5muHXrj/Td2kCwRhT/6fdHX/fu1ZfgvlSZ6M6zxadx0Djl2Hl8qTLgIBj/1sbuKRw3eG6wQQDVffrf+J0EEIz/WQmg2nIdK3aYgU296Y3/D4qcX2v8sHv/AAAAAElFTkSuQmCC"
+        },
+        {
+            "nombre": "spr_nave_2",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABKElEQVR4nO2VzQ3DIAyFuWSxDts12kV66IkdeqFKJCNj/IwJNFWkIFlKcOB9/pETwolXEna8+Ou5bPYPiPS4Lxlgfb4ALoAjAZIB8FOILLIKrhZj3Izew4S5gA4XUZOwNEc2TDjzIEVJAHJxAKMnoEaebIqzqrkF0MgCnJxorBY15+nXAEAWiruETu0QzkJcRk97KAuiFJpGyiLAWfkIgO8RBAdQSoF8tQjR8+i1SzTj32n3dAPIBvUAcJAhAK1xvAAaRDcASq23BNZ9XQCokSwA/u0QwGgPDAF4o25lY0oPeOut2bQeoD3l16v6pvYAEMnjHMHtBuCz2hBx+Roa5r8geEUMX4ZoAgDh4hJhHp8KUgA4Dm7r874lsh5fIxD/mgQwtiyBPeJfFJs5Ogcuj2QAAAAASUVORK5CYII="
+        },
+        {
+            "nombre": "spr_nave_0",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABGElEQVR4nO2VYQ7DIAiF/dP732LX2C6y3z2GS5tgEN9DOl23JTUhaaXyPoHQlP54ZWPniz8fy27fgMj321IAtucL4AI4EyA7AB+FKCKb4Gbruu4m72nCXGCHq1uLsLVANlw496DcUgDs0gBOT1CNMtmAs6m5B9DJAp2cbKxWNdfpRwAkC1Uso9M6jLMSt7eXPZYFUwqkkYsIcTY+AdB7AqEBQCmYrxURen17FASZ/g7FOQxgGzQCoEGGAFDjRAEQxGEAltpoCbx4hwBYI3kA+tshgNEeGAKI3rqXjSk9EK03smk9IHvg1wt9U3uAiJRxzuDeBtCz2hEJ+Toa7r8gRUUcX4HoAhDhKoixiA+CVACBgzPX2Xo/vl7ilw2yNj/AXQAAAABJRU5ErkJggg=="
+        },
+        {
+            "nombre": "spr_nave_1",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABJUlEQVR4nO2VzQ3DIAyFuWSxDts12kV66IkdeqFKJCNjno0pNE2lIFlKcOB9/pETwh+vJGx/8cd92ewXEOl2XTLA+nwCnAB7AiQD4KsQWWQVXC3GuBm9hwlzQTtcRE3C0hzZMOHMgxQlAcjFAYyeUDXyZAPOquYWQCML6uTUxmpRc55+BKBkobhL6NQO4SzEZfS0p2VBlAJppCyiOCsfAfA9guAAoBSarxYheh49ugQZ/w7d0w0gG9QDwEGGAFDjeAEQRDeAllpvCaz7ugC0RrIA+LdDAKM9MATgjbqVjSk94K03smk9QHvg1wt9U3tAEcnjXIP7GIDPakPE5WtomP+C4BUxfBmiCaAIF5cI8/ggSAHgOLit1/OSyHp8jUD8axLAsdYbgtEzAgqogIUAAAAASUVORK5CYII="
+        },
+        {
+            "nombre": "spr_nave_3",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABKklEQVR4nO2VQQ4CIQxF2cw1OIyH9Rp6EReu5g5uMDNJSSn9pQiOMRmSJkqh/9E2nRD+eCVhx4s/7stuv4BIt+uSAbbfJ8AJcCRAMgC+CpFFNsHN1nXdjf6H0bkQY0SXi1eTsDRHNkw48yK9kgDk4gBGT0CNPNkUZ1VzC6CRBTg50Vgtas7TrwGALBSxhE7tEM5CXL6e9lAWRCk0jZRFgLPyEQDfIwgOoJQC+WoRouev14Joxs9pcboBZIN6ADjIEIDWOF4ADaIbAKXWWwIrXhcAaiQLgJ8dAhjtgSEA76tb2ZjSA956azatB2hP+fSqvqk9AETyOEdwHwPwWW2IuHwNDfNbELwihi9DNAGAcBFEmMenghQAjot5vZ4XeMbyGbB9awLA2JoN8AbgISC04KHx3QAAAABJRU5ErkJggg=="
+        },
+        {
+            "nombre": "spr_bala_0",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAYAAAC07qxWAAAARElEQVR4nGNggIL//x3+Y8MM6IAohbgUoSgmpAiueFQh1RQSpZhYhSTENVQhPsUM6AqxKWZAUYjHVIx0S7xC9ESMLg4AKFATNAn1nVgAAAAASUVORK5CYII="
+        },
+        {
+            "nombre": "spr_0",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB20lEQVRYR+1XvUoDQRDei51CKssgKNgINsIVdhZiK/gOlj6APoA+gKXvINiKhZ3FgU3ARjAgKa0C2pnIbPIts3M7t7tHFMVsk9zPzPfN/1xhMs9uWU6aRB6qqshRmfUywA8uns1qr+PhvA3H5vZ0097LIZFNgMDpEIHl7lT8YzQxRIAOkfh2ArCeEyBweOF/EID1SASE4cdCQAQ2Vg4t/sv7jcuDBYGFB/62B2J9PqfHp84L14qb+ryseZSfBKFy5Id6Aw7peH36rM0LS4CDo8/TLweWoGf7fQ/s/G7bu+ZkQITPCwytoi344/GlB7hzdWLakLAE+ISTltM1t54sd+DrM6sHU29IElpIuCccATnfeezwn4g4AgDHw0HfEQi5X+YLJqfnAfmSHLu5BGTspX7qGS4H5EO+9SAZPQIkoIQAHuAEsC1JnCiBUCV4eTDTyOMvQ8DXtSABJGEoBFopNpVhiECoMbkQwN2y4XAhrfloHU9WgGxQtSTkS6amdF73+fak5sC8wGJ6gms5mtPa1pJrQvfVddLKDdm98shiUygwA0Lb8u8loLkutvM3jfRkDxD4eNSrfQN2usOkL6kcWVWhVJIKDs+lykctgqK2BGJySQRiSrR8IfIx2S8kKMeEA/EyFwAAAABJRU5ErkJggg=="
+        },
+        {
+            "nombre": "spr_1",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB0UlEQVRYR+1XvUoDQRDei51CKssgKNgINoEr7CyCreA7WPoA+gD6AJa+g2AbLNKlOLAJpBEMSEqrgHYmMpt8w+xk9/Y2RomYbZL7mfm++Z/LTOI5yvNJmUi3KLIUlUkvA/zk5tlsN2oOzttwbNqX+/ZeColkAgROhwhs1qfiH6OJIQJ0iMSPE4D1kgCBwwv/gwCsRyIgDL8WAiKwt3Vq8V/eHzgP1gTWHvjbHoj1+ZQeX3VecCsu6/O65lF+GoTKUR7qDTik47X/OTcvLAEJjj5PvxJYg161eg7Y9eOhcy3JgIicFxha2aLgT+e3DmDz7sIsQsISkBNOW07X0nqynMF3Z1YPpt7QJEIhkZ5gAnq+y9jhPxFhAgDHw0GPCfjcr/MFk9PxgH5Jj91UAjr2Wj/1DM4B/VBuPUhGhwAJBEIAD0gC2JY0TpSArxKcPJhplPHXIZDrmpcAktAXglAplpWhj4CvMXEI4G7dcKRQqPmEOp6uAN2g5pJQLpkhpcu6L7enYA4sCyymx7uWozntHGxwE+oU95VWbsge52cWm0KBGeDblleXQMh1sZ2/bKRX9gDAx6MGz9NafZj0FVVVNqqUFKWCSwNisqtPIFZG333+BfWTv4Tfv8UFAAAAAElFTkSuQmCC"
+        },
+        {
+            "nombre": "spr_2",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB10lEQVRYR+2Xv0oDQRDG72KnkMoyCAo2go1whZ2F2Aq+g6UPoA+gD2DpOwi2YpEuxYFNwEYwICmtAtqZyHfJt8zO7e7dhpx/MNsk92f3++3M7MxcmkSO/SybhKb08jyNWTLqZYofXT0n652WpfM2HCf359vFvRiIaACIYwBgtT2d/jGaJADAAETjANy9BIA4rfA/ALh7BgLd8G0uAMDW2nGh//J+Z+JgCbC0wN+2QFWej8nxdeuFScWhPK/PPI+fFsFxlAO5gQNrvD59lupFASDFmefxK4W16MVh3xK7fNi1riUMQWS9YNFK5xV/PL22BPduzpJ5IAoAWeH0znEtd4+dG/HN2a4HU2toCJ9LpCUMgK7v0nf8DxADQHE+HPQNgMv8Ol5YOS0L6Jd02Y0F0L7X6yNnmBjQD2XXw2C0ADDB4wJaQAKwW9I6lQCuk2DFwWxF6X/tAtmuOQEYhC4X+I5i6Bi6AFyJybiA5tYJR07yJR9fxtMnQCeoUhDKJtO36KLuy+7JGwOLEqtax9mWMzlt7KyYJNTNb2u13Jx7kJ0U2nAFa4CrW/69AD7TVfX8oZJe2wIQH486pW/AVnsY9SVV5X889y6oAZoQDwKQniA/CtCUODb5BdE3t4R8pqc0AAAAAElFTkSuQmCC"
+        },
+        {
+            "nombre": "spr_3",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB00lEQVRYR+2Xv0oDQRDG72KnkMoyCAo2go1whZ2F2Aq+g6UPoA+gD2DpOwi2YmFncWATsBEMSEqrgHYm8m3yLbOT3dvbI5GI2Sa5P7vfb2dmZ+byLHHsF8WoaspTWeYpSya9TPGjq9dsvdNydD76w+z+fNvcS4FIBoA4BgBW2+PpX4NRBgAMQMwdgLuXABCnFf4HAHfPQKAbfs0FANhaOzb6b593Ng6WAEsL/G0LxPJ8So6vWy9sKq7K8/rM8/hpERxHOZAbOLDG+8v3VL0wAFKceR6/UliLXhx2HbHLh13nWsIQRNYLFq28qfjz6bUjuHdzljWBMACywumd41ruHju34puTXffG1tAQIZdIS1gAXd+l7/gfIBaA4nzY61oAn/l1vLByOhbQL+mymwqgfa/XR86wMaAfyq6HwegAYELABbSABGC3pHWiAL6T4MTBZEXpf+0C2a55ARiEPheEjmLVMfQB+BKTdQHNrROOnBRKPqGMp0+ATlBTQSibzNCis7ovu6dgDMxKLLaOty1nctrYWbFJ6LG8rdVyc+5BcWK04QrWAF+3vLgAIdPFev6qkl7bAhQfDjq2nrba/aSvqJjv+Ty6KCDmJQ6IxQeoa8qm7/0AQfSzhI1VzHAAAAAASUVORK5CYII="
+        },
+        {
+            "nombre": "spr_4",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB2UlEQVRYR+2Xv0oDQRDG72KnkMoyCAo2go1whZ2F2Aq+g6UPoA+gD2DpOwi2YmFncWATsBEMSEqrgHYm8m3yLbNzu7e3IfEPZpvk/ux+v52ZnZnLs8SxWxSjuikPZZmnLJn0MsUPLp6z1U7L0XnrD7Pb001zLwUiGQDiGABYbo+nfwxGGQAwADF3AO5eAkCcVvgfANw9A4Fu+DYXAGBj5dDov7zf2DhYACws8LctEMvzKTm+ab2wqbguz+szz+OnRXAc5UBu4MAar0+flXphAKQ48zx+pbAWPdvvOmLnd9vOtYQhiKwXLFr5tOKPx5eO4M7VSTYNhAGQFU7vHNdy99i5FV+f7Lo3toaGCLlEWsIC6Poufcf/ALEAFOfDXtcC+Myv44WV07GAfkmX3VQA7Xu9PnKGjQH9UHY9DEYHABMCLqAFJAC7Ja0TBfCdBCcOJitK/2sXyHbNC8Ag9LkgdBTrjqEPwJeYrAtobp1w5KRQ8gllPH0CdIKqBKFsMkOLzuq+7J6CMTArsdg63racyWlta8kmofvyulHLzbl7xZHRhitYA3zd8u8FCJku1vPXlfTGFoj5LfZ8OOhUvh9b7b7X2kmfZjFh+VxD/BhASJiwc7MABGCFGMAXEQq3hLasTTkAAAAASUVORK5CYII="
+        },
+        {
+            "nombre": "spr_5",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB00lEQVRYR+2Xu0pDQRCGz4mdQqqUQVCwEWyEU9hZiK3gO1j6APoA+gCWvkPAVizSWRywCdgIBiSlVUA7E5lN/mF2stcQxUu2Sc5l9/92ZnZmTllkjr2qGoem3Nd1mbNk1ssQP7x8KlrthqXzOhgVt2db5l4ORDYAidMggNXmZPr7cFwQAA2C+HIA7F4CkDis8D8AsHsEAtzwbS4ggM21I6P//HbDcbAEWFrgd1sgludzcnxqveBUHMrz+szj+GkROo5yUG7AoDVeHj9m6oUBkOLI8/QrhbXo+UHPEru427GuJQxAZL1A0SrnFX84ubIEd69Pi3kgDICscHrndC13Tztn8Y3prvsTa2gIn0ukJRhA13fpO/wnEAaAOB72ewzgMr+OF1ROywL6JV12cwG07/X6lDM4BvRD2fUgGC0AmuBxASwgAdAtaZ0ogOskWHEwXVH6X7tAtmtOAAShywW+oxg6hi4AV2JiF8DcOuHISb7k48t4+gToBDUThLLJ9C26qPuye/LGwKLEYus423Ikp/XtFU5C3bqT1HJj7n51bLTJFagBrm755wL4TBfr+UMlPdkCMb+lPB8N21yLG82B9wss69MsRVi+QxAhcXr3bwOkWOwTccezhO6J/3IAAAAASUVORK5CYII="
+        },
+        {
+            "nombre": "spr_paredmortal_0",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAABWUlEQVR4nO3RoXLCMACA4VhsLXZY5LC1tdhq5LBInoF32DNMT+4Z9g57BnaZ2B0H26Akbdd84r/LNck1yRfqfX3UMIUQjiEOmkOjnptVs1OA9fNaPVU9VJcB2pdWmZs/zn8H2LxtlKlFs7gOYPu+VeKW7fI2gN3HTolaPa26AYTXoAQBAFB2AACUHQAAZQcAQNkBAFB2AACUHYDJAtQ6CQCAsgMAYJALjv18AAAAAAAAAAAAAAAAAABgMgC5Sw0w0D0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXHjAewMAAAAAAP8HYCIBKBKgnmgAAAAAAKC8h78DAwCAiQYAAAAAAAAAAJAHoMv/R3g+AAAAACgGQADGFgAAZdcZIG5Umm4GiBuUtqsB4kLl6U+AuEB5+xEgTqifzgDiB/XbN8DXQIP0CfU8mXllh/0FAAAAAElFTkSuQmCC"
+        },
+        {
+            "nombre": "spr_cohete_0",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACE0lEQVR4nO2YwW3DMAxFuUg36AZFj9mhE/TQztFTZ+gUnawTJFABCxRFSTQtJyKlD/AQJFH8n8j4ywBLS0tLk+uKakpdf74uU0P4B4AgTCcKoFRuFQGEen97Tl4LwJiHk5jmANQKHEDIACghmFU0vJmfrQtYAHtBgBcA2+tSeeyCDAAuBQRzSsxBaqIIwlMXUPOcgQyCpy6QhhoRBME6piVJhe6SIlU0dnl9ahbooQ0JMBoHIYCjBQOBSExDIy+cCOJxAOjF1AAcrdFAJK0P6Ah9JD7TY7gURm8IolsgnUeNySNFYXSDUEiARUiS+e9dpU5BIPRizgAsANqCZ+80Ns/BYOK7DgRerAUATh4BxlDsthYINQS8UA0ArUoEPgQgfP/l+zcpumZpVFQQGADq2tbQAuDMlyDU1tgFAQPo0caPBoAg+AAQ9PH5dx8AMNgIbLrbCFS+eJc/QQyhZr77n+Aot0EOJv6t026DIwUhWqVU2C0ITR+FIW234mfcHoaESnYfCnPJ7Zi21elOD/FMYOYHIgCoC2Z9JAZARmG2h6KbkjvCTgPaGkbmDXCSXmw2940UZ0aSRCUyjwCYEhcr43vAmPe0+0HREHck3hN0wKD5oAyANJd72P2gBIA21oJR80EsgD05HgzvfhB7zlYAMKsMwEy7H5QdSysmTSa9lqRG3crNLGvlZpa1mtr80tLS0tS6AYaPY2EFCI90AAAAAElFTkSuQmCC"
+        },
+        {
+            "nombre": "spr_cohete_1",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACEElEQVR4nO2Y3U3FMAyFPQhswAaIx7sDE/AAc/DEDEzBZDAARUFqZDvOn/uXODmSH66uGvV8sduTAkxNTU1NiVpQDanl8/02NIR/AAjCcOIAYmVWHoCrl+cH8rsATPdwiGkJQKrAAIQAgBJCt/KGV/OjdYEIoBYEWAGw/o6VxS4IAOBSQOhOxBxQE1EQlrqAm5cMBBAsdUFpqCmCULBO1ypJheaSIpc3dnu6zxbooTUJ0BuHQgBbCxoCQUxDJi8cCOI6APxmUgC2VmsgSOsDOkJvic/8GF4KY08IyRn7/blbXHHzGMBZxWHsBSGWAAMAwLrgyPZPdRTvjK0QpDMAMY87ANM/eqexeQmGEN9VIMhiOQBw8AgIhny35UBoIZCFUgB4JSLwJgDu+sePL1J8zdioaCBIANS1rqEFIJmPQUitUQOBANijja8GgCDYAOD0+vZ9DgBobARWnTYC+MIrHoIYQsr87g/BVl6DEky+SYe8BlsKQrxiqXC3IDR8FGYVBWD1MFQFyuJxuArCyB9EAFAXjPpJDICNwmgfRVeRN0KlAW01o+4NSCq92WDuMymuG5UkqiLzCEBXkmKl/w8E85Z238kbko7ENUEHOjTvFAAozeUWdt+JANDGWujUvJMIoCbHQ8e77ySesxUAulUAYKTddwqOpQmTXSa9nEqNmpWZWdbKzCxrNbT5qampqSH0B/HawHEBFjxLAAAAAElFTkSuQmCC"
+        },
+        {
+            "nombre": "spr_cohete_2",
+            "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACLUlEQVR4nO2YzU0EMQyF3QQ36IAOEMftgQo4QB2cqIEjFVAItUABDMpKiRzH+Z3Mj508yYfRStl5X+yZlwGYmpqamopqQTWklo+3y9AQrgAQhOFEAcRKrRwAU89P9951ARjxcDzTHIBUgQIIAYBGCGLlDFvzo3UBC6AWBGgBYK9jpbELAgC4GiCIk2cOfBNREJq6gJrnDAQQNHVBaagpglCwjmiVpEJ1SZHKGbs83mUL2qGdEqAzDoUA1hacCIRnGjJ5YUMQxwGgN5MCsLbOBsJrfUBH6DXxmR7DS2H0hBDM2N/v7UKLmscA9ioKoxcELwRx5i0AIF2wZfunOop2xloIwRnAmv7+vLkW7gBMf+udxuY5GEx8bwLhLWYBUMFOI8AYct2WA1ENwe4sXshcm103sh1git4QB6AHHHsPD+9fXtE1Y6OShcDNNv3zNWXXaAXAmY9BSK0RhZAD0KONjwaAIOgAYPTy+rMPgLONgFW3EaAwOABHPgQxhJT55ocgI29BOPg1yMGkm9TtNUgB2AWODkK0YqmwWxAaPgqTGu4wVAVK43G4CsLIH0QAUBeM+kkMgIzCaB9Frbw3QqWB1jqNxBvgVHqzwdxnUpwYlSSqIvMIgChxsdL9Box5Tbtv5AxxR+KaoAMCzRsFAEpzuYbdN/IAtMZaEGreiAVQk+NB8O4bsefsBgBiFQAYafeNgmNpwqTIpJdTqVG1UjPLrVIzy60a2vzU1NSUev0DvUFJqoru+t0AAAAASUVORK5CYII="
+        }
+    ],
+    "animaciones": [
+        {
+            "nombre": "canon_girando_izquierda",
+            "cuadros": [
+                {
+                    "nombre": "spr_4",
+                    "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB2UlEQVRYR+2Xv0oDQRDG72KnkMoyCAo2go1whZ2F2Aq+g6UPoA+gD2DpOwi2YmFncWATsBEMSEqrgHYm8m3yLbNzu7e3IfEPZpvk/ux+v52ZnZnLs8SxWxSjuikPZZmnLJn0MsUPLp6z1U7L0XnrD7Pb001zLwUiGQDiGABYbo+nfwxGGQAwADF3AO5eAkCcVvgfANw9A4Fu+DYXAGBj5dDov7zf2DhYACws8LctEMvzKTm+ab2wqbguz+szz+OnRXAc5UBu4MAar0+flXphAKQ48zx+pbAWPdvvOmLnd9vOtYQhiKwXLFr5tOKPx5eO4M7VSTYNhAGQFU7vHNdy99i5FV+f7Lo3toaGCLlEWsIC6Poufcf/ALEAFOfDXtcC+Myv44WV07GAfkmX3VQA7Xu9PnKGjQH9UHY9DEYHABMCLqAFJAC7Ja0TBfCdBCcOJitK/2sXyHbNC8Ag9LkgdBTrjqEPwJeYrAtobp1w5KRQ8gllPH0CdIKqBKFsMkOLzuq+7J6CMTArsdg63racyWlta8kmofvyulHLzbl7xZHRhitYA3zd8u8FCJku1vPXlfTGFoj5LfZ8OOhUvh9b7b7X2kmfZjFh+VxD/BhASJiwc7MABGCFGMAXEQq3hLasTTkAAAAASUVORK5CYII="
+                },
+                {
+                    "nombre": "spr_5",
+                    "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB00lEQVRYR+2Xu0pDQRCGz4mdQqqUQVCwEWyEU9hZiK3gO1j6APoA+gCWvkPAVizSWRywCdgIBiSlVUA7E5lN/mF2stcQxUu2Sc5l9/92ZnZmTllkjr2qGoem3Nd1mbNk1ssQP7x8KlrthqXzOhgVt2db5l4ORDYAidMggNXmZPr7cFwQAA2C+HIA7F4CkDis8D8AsHsEAtzwbS4ggM21I6P//HbDcbAEWFrgd1sgludzcnxqveBUHMrz+szj+GkROo5yUG7AoDVeHj9m6oUBkOLI8/QrhbXo+UHPEru427GuJQxAZL1A0SrnFX84ubIEd69Pi3kgDICscHrndC13Tztn8Y3prvsTa2gIn0ukJRhA13fpO/wnEAaAOB72ewzgMr+OF1ROywL6JV12cwG07/X6lDM4BvRD2fUgGC0AmuBxASwgAdAtaZ0ogOskWHEwXVH6X7tAtmtOAAShywW+oxg6hi4AV2JiF8DcOuHISb7k48t4+gToBDUThLLJ9C26qPuye/LGwKLEYus423Ikp/XtFU5C3bqT1HJj7n51bLTJFagBrm755wL4TBfr+UMlPdkCMb+lPB8N21yLG82B9wss69MsRVi+QxAhcXr3bwOkWOwTccezhO6J/3IAAAAASUVORK5CYII="
+                }
+            ],
+            "velocidad": 10
+        },
+        {
+            "nombre": "canon_girando_derecha",
+            "cuadros": [
+                {
+                    "nombre": "spr_2",
+                    "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB10lEQVRYR+2Xv0oDQRDG72KnkMoyCAo2go1whZ2F2Aq+g6UPoA+gD2DpOwi2YpEuxYFNwEYwICmtAtqZyHfJt8zO7e7dhpx/MNsk92f3++3M7MxcmkSO/SybhKb08jyNWTLqZYofXT0n652WpfM2HCf359vFvRiIaACIYwBgtT2d/jGaJADAAETjANy9BIA4rfA/ALh7BgLd8G0uAMDW2nGh//J+Z+JgCbC0wN+2QFWej8nxdeuFScWhPK/PPI+fFsFxlAO5gQNrvD59lupFASDFmefxK4W16MVh3xK7fNi1riUMQWS9YNFK5xV/PL22BPduzpJ5IAoAWeH0znEtd4+dG/HN2a4HU2toCJ9LpCUMgK7v0nf8DxADQHE+HPQNgMv8Ol5YOS0L6Jd02Y0F0L7X6yNnmBjQD2XXw2C0ADDB4wJaQAKwW9I6lQCuk2DFwWxF6X/tAtmuOQEYhC4X+I5i6Bi6AFyJybiA5tYJR07yJR9fxtMnQCeoUhDKJtO36KLuy+7JGwOLEqtax9mWMzlt7KyYJNTNb2u13Jx7kJ0U2nAFa4CrW/69AD7TVfX8oZJe2wIQH486pW/AVnsY9SVV5X889y6oAZoQDwKQniA/CtCUODb5BdE3t4R8pqc0AAAAAElFTkSuQmCC"
+                },
+                {
+                    "nombre": "spr_3",
+                    "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB00lEQVRYR+2Xv0oDQRDG72KnkMoyCAo2go1whZ2F2Aq+g6UPoA+gD2DpOwi2YmFncWATsBEMSEqrgHYm8m3yLbOT3dvbI5GI2Sa5P7vfb2dmZ+byLHHsF8WoaspTWeYpSya9TPGjq9dsvdNydD76w+z+fNvcS4FIBoA4BgBW2+PpX4NRBgAMQMwdgLuXABCnFf4HAHfPQKAbfs0FANhaOzb6b593Ng6WAEsL/G0LxPJ8So6vWy9sKq7K8/rM8/hpERxHOZAbOLDG+8v3VL0wAFKceR6/UliLXhx2HbHLh13nWsIQRNYLFq28qfjz6bUjuHdzljWBMACywumd41ruHju34puTXffG1tAQIZdIS1gAXd+l7/gfIBaA4nzY61oAn/l1vLByOhbQL+mymwqgfa/XR86wMaAfyq6HwegAYELABbSABGC3pHWiAL6T4MTBZEXpf+0C2a55ARiEPheEjmLVMfQB+BKTdQHNrROOnBRKPqGMp0+ATlBTQSibzNCis7ovu6dgDMxKLLaOty1nctrYWbFJ6LG8rdVyc+5BcWK04QrWAF+3vLgAIdPFev6qkl7bAhQfDjq2nrba/aSvqJjv+Ty6KCDmJQ6IxQeoa8qm7/0AQfSzhI1VzHAAAAAASUVORK5CYII="
+                }
+            ],
+            "velocidad": 10
+        },
+        {
+            "nombre": "canon_en_reposo",
+            "cuadros": [
+                {
+                    "nombre": "spr_0",
+                    "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB20lEQVRYR+1XvUoDQRDei51CKssgKNgINsIVdhZiK/gOlj6APoA+gKXvINiKhZ3FgU3ARjAgKa0C2pnIbPIts3M7t7tHFMVsk9zPzPfN/1xhMs9uWU6aRB6qqshRmfUywA8uns1qr+PhvA3H5vZ0097LIZFNgMDpEIHl7lT8YzQxRIAOkfh2ArCeEyBweOF/EID1SASE4cdCQAQ2Vg4t/sv7jcuDBYGFB/62B2J9PqfHp84L14qb+ryseZSfBKFy5Id6Aw7peH36rM0LS4CDo8/TLweWoGf7fQ/s/G7bu+ZkQITPCwytoi344/GlB7hzdWLakLAE+ISTltM1t54sd+DrM6sHU29IElpIuCccATnfeezwn4g4AgDHw0HfEQi5X+YLJqfnAfmSHLu5BGTspX7qGS4H5EO+9SAZPQIkoIQAHuAEsC1JnCiBUCV4eTDTyOMvQ8DXtSABJGEoBFopNpVhiECoMbkQwN2y4XAhrfloHU9WgGxQtSTkS6amdF73+fak5sC8wGJ6gms5mtPa1pJrQvfVddLKDdm98shiUygwA0Lb8u8loLkutvM3jfRkDxD4eNSrfQN2usOkL6kcWVWhVJIKDs+lykctgqK2BGJySQRiSrR8IfIx2S8kKMeEA/EyFwAAAABJRU5ErkJggg=="
+                },
+                {
+                    "nombre": "spr_1",
+                    "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB0UlEQVRYR+1XvUoDQRDei51CKssgKNgINoEr7CyCreA7WPoA+gD6AJa+g2AbLNKlOLAJpBEMSEqrgHYmMpt8w+xk9/Y2RomYbZL7mfm++Z/LTOI5yvNJmUi3KLIUlUkvA/zk5tlsN2oOzttwbNqX+/ZeColkAgROhwhs1qfiH6OJIQJ0iMSPE4D1kgCBwwv/gwCsRyIgDL8WAiKwt3Vq8V/eHzgP1gTWHvjbHoj1+ZQeX3VecCsu6/O65lF+GoTKUR7qDTik47X/OTcvLAEJjj5PvxJYg161eg7Y9eOhcy3JgIicFxha2aLgT+e3DmDz7sIsQsISkBNOW07X0nqynMF3Z1YPpt7QJEIhkZ5gAnq+y9jhPxFhAgDHw0GPCfjcr/MFk9PxgH5Jj91UAjr2Wj/1DM4B/VBuPUhGhwAJBEIAD0gC2JY0TpSArxKcPJhplPHXIZDrmpcAktAXglAplpWhj4CvMXEI4G7dcKRQqPmEOp6uAN2g5pJQLpkhpcu6L7enYA4sCyymx7uWozntHGxwE+oU95VWbsge52cWm0KBGeDblleXQMh1sZ2/bKRX9gDAx6MGz9NafZj0FVVVNqqUFKWCSwNisqtPIFZG333+BfWTv4Tfv8UFAAAAAElFTkSuQmCC"
+                }
+            ],
+            "velocidad": 10
+        },
+        {
+            "nombre": "navePlayer",
+            "cuadros": [
+                {
+                    "nombre": "spr_nave_0",
+                    "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABGElEQVR4nO2VYQ7DIAiF/dP732LX2C6y3z2GS5tgEN9DOl23JTUhaaXyPoHQlP54ZWPniz8fy27fgMj321IAtucL4AI4EyA7AB+FKCKb4Gbruu4m72nCXGCHq1uLsLVANlw496DcUgDs0gBOT1CNMtmAs6m5B9DJAp2cbKxWNdfpRwAkC1Uso9M6jLMSt7eXPZYFUwqkkYsIcTY+AdB7AqEBQCmYrxURen17FASZ/g7FOQxgGzQCoEGGAFDjRAEQxGEAltpoCbx4hwBYI3kA+tshgNEeGAKI3rqXjSk9EK03smk9IHvg1wt9U3uAiJRxzuDeBtCz2hEJ+Toa7r8gRUUcX4HoAhDhKoixiA+CVACBgzPX2Xo/vl7ilw2yNj/AXQAAAABJRU5ErkJggg=="
+                },
+                {
+                    "nombre": "spr_nave_1",
+                    "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABJUlEQVR4nO2VzQ3DIAyFuWSxDts12kV66IkdeqFKJCNjno0pNE2lIFlKcOB9/pETwh+vJGx/8cd92ewXEOl2XTLA+nwCnAB7AiQD4KsQWWQVXC3GuBm9hwlzQTtcRE3C0hzZMOHMgxQlAcjFAYyeUDXyZAPOquYWQCML6uTUxmpRc55+BKBkobhL6NQO4SzEZfS0p2VBlAJppCyiOCsfAfA9guAAoBSarxYheh49ugQZ/w7d0w0gG9QDwEGGAFDjeAEQRDeAllpvCaz7ugC0RrIA+LdDAKM9MATgjbqVjSk94K03smk9QHvg1wt9U3tAEcnjXIP7GIDPakPE5WtomP+C4BUxfBmiCaAIF5cI8/ggSAHgOLit1/OSyHp8jUD8axLAsdYbgtEzAgqogIUAAAAASUVORK5CYII="
+                },
+                {
+                    "nombre": "spr_nave_2",
+                    "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABKElEQVR4nO2VzQ3DIAyFuWSxDts12kV66IkdeqFKJCNj/IwJNFWkIFlKcOB9/pETwolXEna8+Ou5bPYPiPS4Lxlgfb4ALoAjAZIB8FOILLIKrhZj3Izew4S5gA4XUZOwNEc2TDjzIEVJAHJxAKMnoEaebIqzqrkF0MgCnJxorBY15+nXAEAWiruETu0QzkJcRk97KAuiFJpGyiLAWfkIgO8RBAdQSoF8tQjR8+i1SzTj32n3dAPIBvUAcJAhAK1xvAAaRDcASq23BNZ9XQCokSwA/u0QwGgPDAF4o25lY0oPeOut2bQeoD3l16v6pvYAEMnjHMHtBuCz2hBx+Roa5r8geEUMX4ZoAgDh4hJhHp8KUgA4Dm7r874lsh5fIxD/mgQwtiyBPeJfFJs5Ogcuj2QAAAAASUVORK5CYII="
+                },
+                {
+                    "nombre": "spr_nave_3",
+                    "contenido": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABKklEQVR4nO2VQQ4CIQxF2cw1OIyH9Rp6EReu5g5uMDNJSSn9pQiOMRmSJkqh/9E2nRD+eCVhx4s/7stuv4BIt+uSAbbfJ8AJcCRAMgC+CpFFNsHN1nXdjf6H0bkQY0SXi1eTsDRHNkw48yK9kgDk4gBGT0CNPNkUZ1VzC6CRBTg50Vgtas7TrwGALBSxhE7tEM5CXL6e9lAWRCk0jZRFgLPyEQDfIwgOoJQC+WoRouev14Joxs9pcboBZIN6ADjIEIDWOF4ADaIbAKXWWwIrXhcAaiQLgJ8dAhjtgSEA76tb2ZjSA956azatB2hP+fSqvqk9AETyOEdwHwPwWW2IuHwNDfNbELwihi9DNAGAcBFEmMenghQAjot5vZ4XeMbyGbB9awLA2JoN8AbgISC04KHx3QAAAABJRU5ErkJggg=="
+                }
+            ],
+            "velocidad": "17"
+        },
+        {
+            "nombre": "explosion",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:explosion/explosion_001",
+                    "sprite": "imagenes-explosion-explosion_001"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_002",
+                    "sprite": "imagenes-explosion-explosion_002"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_003",
+                    "sprite": "imagenes-explosion-explosion_003"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_004",
+                    "sprite": "imagenes-explosion-explosion_004"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_005",
+                    "sprite": "imagenes-explosion-explosion_005"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_006",
+                    "sprite": "imagenes-explosion-explosion_006"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_007",
+                    "sprite": "imagenes-explosion-explosion_007"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_008",
+                    "sprite": "imagenes-explosion-explosion_008"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_009",
+                    "sprite": "imagenes-explosion-explosion_009"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_010",
+                    "sprite": "imagenes-explosion-explosion_010"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_011",
+                    "sprite": "imagenes-explosion-explosion_011"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_012",
+                    "sprite": "imagenes-explosion-explosion_012"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_013",
+                    "sprite": "imagenes-explosion-explosion_013"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_014",
+                    "sprite": "imagenes-explosion-explosion_014"
+                },
+                {
+                    "nombre": "imagenes:explosion/explosion_015",
+                    "sprite": "imagenes-explosion-explosion_015"
+                }
+            ],
+            "velocidad": "30"
+        },
+        {
+            "nombre": "mini_explosion",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:mini-explosion/explosion_0",
+                    "sprite": "imagenes-mini-explosion-explosion_0"
+                },
+                {
+                    "nombre": "imagenes:mini-explosion/explosion_1",
+                    "sprite": "imagenes-mini-explosion-explosion_1"
+                },
+                {
+                    "nombre": "imagenes:mini-explosion/explosion_2",
+                    "sprite": "imagenes-mini-explosion-explosion_2"
+                },
+                {
+                    "nombre": "imagenes:mini-explosion/explosion_3",
+                    "sprite": "imagenes-mini-explosion-explosion_3"
+                },
+                {
+                    "nombre": "imagenes:mini-explosion/explosion_4",
+                    "sprite": "imagenes-mini-explosion-explosion_4"
+                },
+                {
+                    "nombre": "imagenes:mini-explosion/explosion_5",
+                    "sprite": "imagenes-mini-explosion-explosion_5"
+                },
+                {
+                    "nombre": "imagenes:mini-explosion/explosion_6",
+                    "sprite": "imagenes-mini-explosion-explosion_6"
+                }
+            ],
+            "velocidad": "20"
+        },
+        {
+            "nombre": "golpe",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:efectos/golpe-1",
+                    "sprite": "imagenes-efectos-golpe-1"
+                },
+                {
+                    "nombre": "imagenes:efectos/golpe-2",
+                    "sprite": "imagenes-efectos-golpe-2"
+                },
+                {
+                    "nombre": "imagenes:efectos/golpe-3",
+                    "sprite": "imagenes-efectos-golpe-3"
+                },
+                {
+                    "nombre": "imagenes:efectos/golpe-4",
+                    "sprite": "imagenes-efectos-golpe-4"
+                },
+                {
+                    "nombre": "imagenes:efectos/golpe-5",
+                    "sprite": "imagenes-efectos-golpe-5"
+                },
+                {
+                    "nombre": "imagenes:efectos/golpe-6",
+                    "sprite": "imagenes-efectos-golpe-6"
+                }
+            ],
+            "velocidad": "15"
+        },
+        {
+            "nombre": "chispa",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:efectos/chispa-1",
+                    "sprite": "imagenes-efectos-chispa-1"
+                },
+                {
+                    "nombre": "imagenes:efectos/chispa-2",
+                    "sprite": "imagenes-efectos-chispa-2"
+                },
+                {
+                    "nombre": "imagenes:efectos/chispa-3",
+                    "sprite": "imagenes-efectos-chispa-3"
+                },
+                {
+                    "nombre": "imagenes:efectos/chispa-4",
+                    "sprite": "imagenes-efectos-chispa-4"
+                },
+                {
+                    "nombre": "imagenes:efectos/chispa-5",
+                    "sprite": "imagenes-efectos-chispa-5"
+                }
+            ],
+            "velocidad": "20"
+        },
+        {
+            "nombre": "humo",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:efectos/humo-01",
+                    "sprite": "imagenes-efectos-humo-01"
+                },
+                {
+                    "nombre": "imagenes:efectos/humo-02",
+                    "sprite": "imagenes-efectos-humo-02"
+                },
+                {
+                    "nombre": "imagenes:efectos/humo-03",
+                    "sprite": "imagenes-efectos-humo-03"
+                },
+                {
+                    "nombre": "imagenes:efectos/humo-04",
+                    "sprite": "imagenes-efectos-humo-04"
+                },
+                {
+                    "nombre": "imagenes:efectos/humo-05",
+                    "sprite": "imagenes-efectos-humo-05"
+                },
+                {
+                    "nombre": "imagenes:efectos/humo-06",
+                    "sprite": "imagenes-efectos-humo-06"
+                },
+                {
+                    "nombre": "imagenes:efectos/humo-07",
+                    "sprite": "imagenes-efectos-humo-07"
+                },
+                {
+                    "nombre": "imagenes:efectos/humo-08",
+                    "sprite": "imagenes-efectos-humo-08"
+                },
+                {
+                    "nombre": "imagenes:efectos/humo-09",
+                    "sprite": "imagenes-efectos-humo-09"
+                },
+                {
+                    "nombre": "imagenes:efectos/humo-10",
+                    "sprite": "imagenes-efectos-humo-10"
+                }
+            ],
+            "velocidad": "15"
+        },
+        {
+            "nombre": "hombre_pixel_camina",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:pixelados/pixel_player_1",
+                    "sprite": "imagenes-pixelados-pixel_player_1"
+                },
+                {
+                    "nombre": "imagenes:pixelados/pixel_player_2",
+                    "sprite": "imagenes-pixelados-pixel_player_2"
+                }
+            ],
+            "velocidad": "15"
+        },
+        {
+            "nombre": "hombre_pixel_parado",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:pixelados/pixel_player_0",
+                    "sprite": "imagenes-pixelados-pixel_player_0"
+                }
+            ],
+            "velocidad": 10
+        },
+        {
+            "nombre": "fantasma_azul_camina",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:pacman/fantasma_azul_0",
+                    "sprite": "imagenes-pacman-fantasma_azul_0"
+                },
+                {
+                    "nombre": "imagenes:pacman/fantasma_azul_1",
+                    "sprite": "imagenes-pacman-fantasma_azul_1"
+                }
+            ],
+            "velocidad": "10"
+        },
+        {
+            "nombre": "fantasma_camina",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:pacman/fantasma_6",
+                    "sprite": "imagenes-pacman-fantasma_6"
+                },
+                {
+                    "nombre": "imagenes:pacman/fantasma_7",
+                    "sprite": "imagenes-pacman-fantasma_7"
+                }
+            ],
+            "velocidad": "10"
+        },
+        {
+            "nombre": "moneda",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:monedas/moneda_0",
+                    "sprite": "imagenes-monedas-moneda_0"
+                },
+                {
+                    "nombre": "imagenes:monedas/moneda_1",
+                    "sprite": "imagenes-monedas-moneda_1"
+                },
+                {
+                    "nombre": "imagenes:monedas/moneda_2",
+                    "sprite": "imagenes-monedas-moneda_2"
+                },
+                {
+                    "nombre": "imagenes:monedas/moneda_3",
+                    "sprite": "imagenes-monedas-moneda_3"
+                },
+                {
+                    "nombre": "imagenes:monedas/moneda_4",
+                    "sprite": "imagenes-monedas-moneda_4"
+                },
+                {
+                    "nombre": "imagenes:monedas/moneda_5",
+                    "sprite": "imagenes-monedas-moneda_5"
+                },
+                {
+                    "nombre": "imagenes:monedas/moneda_6",
+                    "sprite": "imagenes-monedas-moneda_6"
+                },
+                {
+                    "nombre": "imagenes:monedas/moneda_7",
+                    "sprite": "imagenes-monedas-moneda_7"
+                }
+            ],
+            "velocidad": "30"
+        },
+        {
+            "nombre": "pacman_come",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:pacman/pacman_4",
+                    "sprite": "imagenes-pacman-pacman_4"
+                },
+                {
+                    "nombre": "imagenes:pacman/pacman_5",
+                    "sprite": "imagenes-pacman-pacman_5"
+                },
+                {
+                    "nombre": "imagenes:pacman/pacman_6",
+                    "sprite": "imagenes-pacman-pacman_6"
+                }
+            ],
+            "velocidad": "20"
+        },
+        {
+            "nombre": "pacman_espera",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:pacman/pacman_4",
+                    "sprite": "imagenes-pacman-pacman_4"
+                }
+            ],
+            "velocidad": 10
+        },
+        {
+            "nombre": "nave_girando_a_la_derecha",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:nave/nave_derecha_1",
+                    "sprite": "imagenes-nave-nave_derecha_1"
+                },
+                {
+                    "nombre": "imagenes:nave/nave_derecha_2",
+                    "sprite": "imagenes-nave-nave_derecha_2"
+                }
+            ],
+            "velocidad": "20"
+        },
+        {
+            "nombre": "nave_girando_a_la_izquierda",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:nave/nave_izquierda_1",
+                    "sprite": "imagenes-nave-nave_izquierda_1"
+                },
+                {
+                    "nombre": "imagenes:nave/nave_izquierda_2",
+                    "sprite": "imagenes-nave-nave_izquierda_2"
+                }
+            ],
+            "velocidad": "20"
+        },
+        {
+            "nombre": "nave_avanzando",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:nave/nave_avanza_1",
+                    "sprite": "imagenes-nave-nave_avanza_1"
+                },
+                {
+                    "nombre": "imagenes:nave/nave_avanza_2",
+                    "sprite": "imagenes-nave-nave_avanza_2"
+                }
+            ],
+            "velocidad": "20"
+        },
+        {
+            "nombre": "nave_en_reposo",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:nave/nave_reposo",
+                    "sprite": "imagenes-nave-nave_reposo"
+                }
+            ],
+            "velocidad": 10
+        },
+        {
+            "nombre": "gallina_vuela",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:gallina/gallina_vuela_1",
+                    "sprite": "imagenes-gallina-gallina_vuela_1"
+                },
+                {
+                    "nombre": "imagenes:gallina/gallina_vuela_2",
+                    "sprite": "imagenes-gallina-gallina_vuela_2"
+                },
+                {
+                    "nombre": "imagenes:gallina/gallina_vuela_3",
+                    "sprite": "imagenes-gallina-gallina_vuela_3"
+                },
+                {
+                    "nombre": "imagenes:gallina/gallina_vuela_2",
+                    "sprite": "imagenes-gallina-gallina_vuela_2"
+                }
+            ],
+            "velocidad": "20"
+        },
+        {
+            "nombre": "nave_avanza",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:nave/nave_avanza_1",
+                    "sprite": "imagenes-nave-nave_avanza_1"
+                },
+                {
+                    "nombre": "imagenes:nave/nave_avanza_2",
+                    "sprite": "imagenes-nave-nave_avanza_2"
+                }
+            ],
+            "velocidad": 10
+        },
+        {
+            "nombre": "conejo_salta",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:conejo/conejo_salta",
+                    "sprite": "imagenes-conejo-conejo_salta"
+                }
+            ],
+            "velocidad": 10
+        },
+        {
+            "nombre": "conejo_parado",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:conejo/conejo_parado1",
+                    "sprite": "imagenes-conejo-conejo_parado1"
+                },
+                {
+                    "nombre": "imagenes:conejo/conejo_parado2",
+                    "sprite": "imagenes-conejo-conejo_parado2"
+                }
+            ],
+            "velocidad": "2"
+        },
+        {
+            "nombre": "conejo_camina",
+            "velocidad": 15,
+            "cuadros": [
+                {
+                    "nombre": "imagenes:conejo/conejo_camina1",
+                    "sprite": "imagenes-conejo-conejo_camina1"
+                },
+                {
+                    "nombre": "imagenes:conejo/conejo_camina2",
+                    "sprite": "imagenes-conejo-conejo_camina2"
+                }
+            ]
+        },
+        {
+            "nombre": "bmo_camina",
+            "velocidad": 15,
+            "cuadros": [
+                {
+                    "nombre": "imagenes:bmo/bmo_camina_1",
+                    "sprite": "imagenes-bmo-bmo_camina_1"
+                },
+                {
+                    "nombre": "imagenes:bmo/bmo_camina_2",
+                    "sprite": "imagenes-bmo-bmo_camina_2"
+                }
+            ]
+        },
+        {
+            "nombre": "bmo_escala",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:bmo/bmo_escala_1",
+                    "sprite": "imagenes-bmo-bmo_escala_1"
+                },
+                {
+                    "nombre": "imagenes:bmo/bmo_escala_2",
+                    "sprite": "imagenes-bmo-bmo_escala_2"
+                }
+            ],
+            "velocidad": 10
+        },
+        {
+            "nombre": "bmo_salta",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:bmo/bmo_salta",
+                    "sprite": "imagenes-bmo-bmo_salta"
+                }
+            ],
+            "velocidad": 10
+        },
+        {
+            "nombre": "bmo_parado",
+            "cuadros": [
+                {
+                    "nombre": "imagenes:bmo/bmo_parado",
+                    "sprite": "imagenes-bmo-bmo_parado"
+                }
+            ],
+            "velocidad": 10
+        }
+    ],
+    "codigos": {
+        "escenas": [
+            {
+                "nombre": "escena0",
+                "codigo": "class escena0 extends Escena {\n    iniciar() {\n\n    }\n\n    actualizar() {\n        this.desplazamiento_del_fondo_x += 1;\n    }\n\n}"
+            },
+            {
+                "nombre": "escena1",
+                "codigo": "class escena1 extends Escena {\n\n    iniciar() {\n\n    }\n\n    actualizar() {\n\n    }\n\n}"
+            },
+            {
+                "nombre": "test",
+                "codigo": "class test extends Escena {\n    \n  iniciar() {\n\n  }\n\n  actualizar() {\n\n  }\n\n}"
+            },
+            {
+                "nombre": "escena2",
+                "codigo": "class escena2 extends Escena {\n    \n  iniciar() {\n//let nave = this.pilas.actores.nave();\n  }\n\n  actualizar() {\n\n      //let nave = this.pilas.actores.nave();\n    //let planeta = this.pilas.obtener_actor_por_nombre(\"planeta\");\n        //nave.rotacion = this.pilas.obtener_angulo_entre_actores(nave, planeta);\n  }\n\n}"
+            },
+            {
+                "nombre": "Area1",
+                "codigo": "class Area1 extends Escena {\n\n  iniciar() {\n\n  }\n\n  actualizar() {\n\n  }\n\n}"
+            }
+        ],
+        "actores": [
+            {
+                "nombre": "dado1",
+                "codigo": "// @ts-ignore\nclass dado1 extends Actor {\n\n    //contador;\n\n    anchoPantalla;\n    altoPantalla;\n\n    iniciar() {\n        //this.imagen;\n        //this.contador = 0;\n        this.velocidad_x = 2;//Velocidad inicial en X\n        this.velocidad_y = 2;//Velocidad inicial en Y\n\n        //----------------------------------------------------------------------------------------------\n        /*\n        *Los valores almacenados en la variable anchoPantalla y altoPantalla nos permite obtener los limites\n        de nuestra pantalla sin importar las dimensiones de nuestro proyecto ni de nuestro personaje.\n        \n        *Es importante que nuestro personaje tenga figura fisica ya sea un rectangulo o circulo.\n        */\n\n        //Obtenemos el limite del recorrido de nuestro personaje en el eje X\n        this.anchoPantalla = this.pilas.camara.borde_derecho - this.figura_ancho/2;\n\n        //Obtenemos el limite del recorrido de nuestro personaje en el eje Y\n        this.altoPantalla = this.pilas.camara.borde_arriba - this._figura_alto/2;\n        //-----------------------------------------------------------------------------------------------\n    }\n\n\n    rebote_direccional(){\n        this.x +=this.velocidad_x;\n        this.y +=this.velocidad_y;\n\n        if(this.x > this.anchoPantalla){this.velocidad_x = -2;}else\n        if(this.x < -this.anchoPantalla){this.velocidad_x = 2;}else\n        if(this.y > this.altoPantalla){this.velocidad_y = -2;}else\n        if(this.y < -this.altoPantalla){this.velocidad_y = 2;}\n    }\n\n\n    informacion(){\n        //this.pilas.observar(\"contador\", this.contador);\n        this.pilas.observar(\"X\", this.x);\n        this.pilas.observar(\"Y\", this.y);\n\n        this.pilas.observar(\"Alto pantalla\", this.altoPantalla);\n        this.pilas.observar(\"Ancho pantalla\", this.anchoPantalla);\n    }\n\n\n    actualizar() {\n        this.rebote_direccional();\n        this.informacion();\n    }\n\n}"
+            },
+            {
+                "nombre": "pelota",
+                "codigo": "// @ts-ignore\nclass pelota extends Actor {\n    iniciar() {}\n}"
+            },
+            {
+                "nombre": "techo",
+                "codigo": "// @ts-ignore\nclass techo extends Actor {\n    iniciar() {}\n}"
+            },
+            {
+                "nombre": "suelo",
+                "codigo": "// @ts-ignore\nclass suelo extends Actor {\n    iniciar() {}\n}"
+            },
+            {
+                "nombre": "navePlayer1",
+                "codigo": "// @ts-ignore\nclass navePlayer1 extends Actor {\n    contador_de_disparo: number;\n\n    iniciar() {\n        this.animacion = \"navePlayer\";\n        this.contador_de_disparo = 0;\n    }\n\n    actualizar() {\n        let velocidad = 5;\n\n        if (this.pilas.control.izquierda) {\n            this.x -= velocidad;\n\n            if (this.x < -230) {\n                this.x = -230\n            }\n        }\n\n        if (this.pilas.control.derecha) {\n            this.x += velocidad;\n\n            if (this.x > 230) {\n                this.x = 230\n            }\n        }\n\n        if (this.pilas.control.abajo) {\n            this.y -= velocidad;\n\n            if (this.y < -230) {\n                this.y = -230\n            }\n        }\n\n        if (this.pilas.control.arriba) {\n            this.y += velocidad;\n\n            if (this.y > 200) {\n                this.y = 200;\n            }\n        }\n\n        if (this.pilas.control.espacio) {\n            if (this.contador_de_disparo < 0) {\n                this.disparar();\n                this.contador_de_disparo = 5;\n            } else {\n                this.contador_de_disparo -= 1;\n            }\n        }\n    }\n\n    disparar() {\n        let misil1 = this.pilas.clonar_en(\"misil1\", this.x + 20, this.y + 20);\n        let balaPlayer1 = this.pilas.clonar_en(\"balaPlayer1\", this.x + 20, this.y + 20);\n    }\n\n}"
+            },
+            {
+                "nombre": "misil1",
+                "codigo": "// @ts-ignore\nclass misil1 extends Actor {\n\n    velocidad;\n\n    iniciar() {\n        this.centro_x = 0.3;\n        this.velocidad = 0;\n        this.pilas.reproducir_sonido(\"laser\");\n    }\n\n    actualizar() {\n        this.velocidad += 0.2\n        this.avanzar(this.y + 10, this.velocidad);\n        this.eliminar_si_sale_de_la_pantalla();\n    }\n\n    eliminar_si_sale_de_la_pantalla() {\n        let izquierda = this.pilas.camara.borde_izquierdo;\n        let derecha = this.pilas.camara.borde_derecho;\n        let arriba = this.pilas.camara.borde_arriba;\n        let abajo = this.pilas.camara.borde_abajo;\n\n        if (this.x > derecha || this.x < izquierda || this.y > arriba || this.y < abajo) {\n            this.eliminar();\n        }\n    }\n}"
+            },
+            {
+                "nombre": "balaPlayer1",
+                "codigo": "// @ts-ignore\nclass balaPlayer1 extends Actor {\n\n    velocidad;\n\n    iniciar() {\n        this.centro_x = 0.3;\n        this.velocidad = 10;\n        this.pilas.reproducir_sonido(\"laser\");\n    }\n\n    actualizar() {\n        this.avanzar(this.x + 10, this.velocidad);\n        this.eliminar_si_sale_de_la_pantalla();\n    }\n\n    eliminar_si_sale_de_la_pantalla() {\n        let izquierda = this.pilas.camara.borde_izquierdo;\n        let derecha = this.pilas.camara.borde_derecho;\n        let arriba = this.pilas.camara.borde_arriba;\n        let abajo = this.pilas.camara.borde_abajo;\n\n        if (this.x > derecha || this.x < izquierda || this.y > arriba || this.y < abajo) {\n            this.eliminar();\n        }\n    }\n}"
+            },
+            {
+                "nombre": "naveApoyo",
+                "codigo": "// @ts-ignore\nclass naveApoyo extends Actor {\n\n    velocidad = 5;\n    cuadros_desde_el_ultimo_disparo;\n\n    iniciar() {\n        this.animacion = \"canon_en_reposo\";\n        this.cuadros_desde_el_ultimo_disparo = 0;\n    }\n\n    actualizar() {\n        this.cuadros_desde_el_ultimo_disparo += 1;\n\n        if (this.pilas.control.izquierda) {\n            this.rotacion += this.velocidad;\n            this.animacion = \"canon_girando_izquierda\";\n        }\n\n        if (this.pilas.control.derecha) {\n            this.rotacion -= this.velocidad;\n            this.animacion = \"canon_girando_derecha\";\n        }\n\n        if (this.pilas.control.espacio && this.cuadros_desde_el_ultimo_disparo > 5) {\n            this.disparar();\n        }\n\n        if (this.pilas.control.arriba) {\n            //this.avanzar(this.rotacion, this.velocidad);\n            //this.animacion = \"nave_avanzando\";\n        } else {\n            if (!this.pilas.control.izquierda && !this.pilas.control.derecha) {\n                this.animacion = \"canon_en_reposo\";\n            }\n        }\n    }\n\n    disparar() {\n        let laser = this.pilas.actores.laser();\n        laser.x = this.x;\n        laser.y = this.y;\n        laser.rotacion = this.rotacion + 90;\n        laser.z = this.z + 1;\n        this.cuadros_desde_el_ultimo_disparo = 0;\n    }\n}"
+            },
+            {
+                "nombre": "balaPlayer2",
+                "codigo": "// @ts-ignore\nclass balaPlayer2 extends Actor {\n\n    velocidad;\n\n    iniciar() {\n        this.centro_x = 0.3;\n        this.velocidad = 10;\n        this.pilas.reproducir_sonido(\"laser\");\n    }\n\n    actualizar() {\n        this.avanzar(0, this.velocidad);\n        this.eliminar_si_sale_de_la_pantalla();\n    }\n\n    eliminar_si_sale_de_la_pantalla() {\n        let izquierda = this.pilas.camara.borde_izquierdo;\n        let derecha = this.pilas.camara.borde_derecho;\n        let arriba = this.pilas.camara.borde_arriba;\n        let abajo = this.pilas.camara.borde_abajo;\n\n        if (this.x > derecha || this.x < izquierda || this.y > arriba || this.y < abajo) {\n            this.eliminar();\n        }\n    }\n}"
+            },
+            {
+                "nombre": "navePlayer2",
+                "codigo": "// @ts-ignore\nclass navePlayer2 extends Actor {\n    contador_de_disparo: number;\n\n    iniciar() {\n        this.animacion = \"navePlayer\";\n        this.contador_de_disparo = 0;\n    }\n\n    actualizar() {\n        let velocidad = 5;\n\n        if (this.pilas.control.izquierda) {\n            this.x -= velocidad;\n\n            if (this.x < -230) {\n                this.x = -230\n            }\n        }\n\n        if (this.pilas.control.derecha) {\n            this.x += velocidad;\n\n            if (this.x > 230) {\n                this.x = 230\n            }\n        }\n\n        if (this.pilas.control.abajo) {\n            this.y -= velocidad;\n\n            if (this.y < -230) {\n                this.y = -230\n            }\n        }\n\n        if (this.pilas.control.arriba) {\n            this.y += velocidad;\n\n            if (this.y > 200) {\n                this.y = 200;\n            }\n        }\n\n        if (this.pilas.control.espacio) {\n            if (this.contador_de_disparo < 0) {\n                this.disparar();\n                this.contador_de_disparo = 5;\n            } else {\n                this.contador_de_disparo -= 1;\n            }\n        }\n    }\n\n    disparar() {\n        let misil1 = this.pilas.clonar_en(\"misil1\", this.x + 30, this.y);\n        let balaPlayer2 = this.pilas.clonar_en(\"balaPlayer2\", this.x + 20, this.y);\n    }\n\n}"
+            },
+            {
+                "nombre": "nube",
+                "codigo": "// @ts-ignore\nclass nube extends Actor {\n\n    iniciar() {}\n}"
+            },
+            {
+                "nombre": "enemigo",
+                "codigo": "// @ts-ignore\nclass enemigo extends Actor {\n\n    iniciar() {\n        this.y = 300;\n        this.x = this.pilas.azar(-200, 200);\n    }\n\n    actualizar() {\n        this.y -= 2;\n\n        // si el actor sale de la pantalla por\n        // debajo, se elimina.\n        if (this.y < -300) {\n            this.eliminar();\n        }\n    }\n\n    cuando_colisiona(actor: Actor) {\n\n        if (actor.tiene_etiqueta(\"disparo\")) {\n            // Elimina al enemigo\n            this.eliminar();\n\n            // Elimina al disparo\n            actor.eliminar();\n\n            // Crea una explosión en la misma\n            // posición que el enemigo.\n            var explosion = this.pilas.actores.explosion();\n            explosion.x = this.x;\n            explosion.y = this.y;\n\n            // realiza el movimiento de la cámara.\n            this.pilas.camara.vibrar(1, 0.2);\n\n            // aumenta el puntaje.\n            //let puntaje = this.pilas.obtener_actor_por_nombre(\"puntaje\");\n            //puntaje.aumentar();\n        }\n    }\n}"
+            },
+            {
+                "nombre": "pantalla_completa",
+                "codigo": "// @ts-ignore\nclass pantalla_completa extends Actor {\n\n    iniciar() {\n        this.transparencia = 50;\n    }\n\n    cuando_hace_click() {\n        this.pilas.alternar_modo_pantalla_completa();\n    }\n\n    cuando_mueve() {\n        this.transparencia = 0;\n    }\n\n    cuando_sale() {\n        this.transparencia = 0;\n    }\n}"
+            },
+            {
+                "nombre": "aceituna",
+                "codigo": "// @ts-ignore\nclass aceituna extends Actor {\n    \n    \n    velocidad;\n    aumentarTraslacion;\n\n  iniciar() {\n    this.imagen = \"imagenes:objetos/aceituna\";\n    this.velocidad = 0;\n    this.aumentarTraslacion = 0;\n  }\n\n  actualizar(){\n      let nave = this.pilas.obtener_actor_por_nombre(\"navePlayer2\");\n      let angulo = this.pilas.obtener_angulo_entre_actores(nave,this);\n      let traslacion = angulo + this.aumentarTraslacion;\n      let distancia = this.pilas.obtener_distancia_entre_actores(nave,this)\n      this.velocidad =0.2;\n      this.aumentarTraslacion++;\n      //this.x = nave.x + angulo + this.velocidad;\n      //this.y = nave.y + angulo + this.velocidad;\n\n      //this.x = nave.x + traslacion;\n      //this.y = nave.y + traslacion;\n\n      //this.x++;// = nave.x + 50;\n      //this.y++;// = nave.y + 50;\n      \n      //this.avanzar(nave.x + 1, this.velocidad);\n      //this.avanzar(nave.y + 1, this.velocidad);\n\n      \n    \n        //Esta linea podria usarlo para hacer seguimiento al jugador\n      this.hacer_recorrido([nave.x ,nave.y,20,20],0.2,5,true);\n      \n\n      this.pilas.observar(\"angulo\", angulo);\n      this.pilas.observar(\"distancia\", distancia);\n      this.pilas.observar(\"traslacion\", traslacion);\n      this.pilas.observar(\"aumentarTraslacion\", this.aumentarTraslacion);\n      this.pilas.observar(\"x \", this.x);\n      this.pilas.observar(\"y \", this.y);\n\n      //if(distancia > 50) distancia = 50;\n      \n  }\n}\n"
+            },
+            {
+                "nombre": "cabezaGusano",
+                "codigo": "// @ts-ignore\nclass cabezaGusano extends Actor {\n\n\n    contador;\n    iniciar() {\n        //this.imagen = \"imagenes:objetos/aceituna\";\n        this.contador = 0;\n    }\n\n    limites() {\n        let ancho_pantalla_horizontal = this.pilas.camara.borde_derecho;\n        let ancho_pantalla_vertical = this.pilas.camara.borde_abajo;\n        let ancho_imagen = this.figura_radio;\n        let alto_imagen = this._figura_alto;\n\n        this.pilas.observar(\"figuraAncho\", ancho_imagen);\n\n        //if(this.x == argumento2){\n        //if(this.x > 0 &&  this.x < ancho_pantalla)\n        if (this.x < -ancho_pantalla_horizontal) this.x = -ancho_pantalla_horizontal;\n        if (this.x > ancho_pantalla_horizontal  - ancho_imagen) this.x = ancho_pantalla_horizontal - ancho_imagen;\n        //}\n\n        //if(this.y == argumento2){\n        //if(this.x > 0 &&  this.x < ancho_pantalla)\n        if (this.y < 0) this.y == 0;\n        if (this.y > ancho_pantalla_vertical - alto_imagen) this.y == ancho_pantalla_vertical - alto_imagen;\n        //}\n\n\n    }\n\n\n    actualizar() {\n\n        this.getCircleX(1, 10);\n        //this.limites();\n        this.entrada();\n        this.pilas.observar(\"contador\", this.contador);\n\n        //if (this.x < -200) {this.x = -200;}\n        //if (this.x > 200) { this.x = 200; }\n        this.pilas.observar(\"X\", this.x);\n\n\n\n\n\n        /*\n                switch(this.contador){\n                    case 0:\n                        this.avanzar(30,3);\n                    break;\n        \n                    case 1:\n                        this.avanzar(90,3);\n                        this.decir(\"ESte es el case 1\");\n                    break;\n        \n                    case 2:\n                        this.decir(\"ESte es el case 2\");\n                    break;\n        \n                }\n                */\n\n\n    }\n\n    entrada() {\n        let velocidad = 5;\n        if (this.pilas.control.izquierda) {\n            this.x -= velocidad;\n            this.contador = 1;\n            //this.decir(\"ESte es el case 1\");\n        }\n\n        if (this.pilas.control.derecha) {\n            this.x += velocidad;\n            this.contador = 2;\n            //this.decir(\"ESte es el case 2\");\n        }\n\n        if (this.pilas.control.arriba) {\n            this.y += velocidad;\n            this.contador++;\n        }\n\n        if (this.pilas.control.abajo) {\n            this.y -= velocidad;\n            this.contador--;\n        }\n    }\n\n    clamp(argumento1: string) {\n        let argumento2 = parseInt(argumento1, 10);\n\n        this.x = argumento2;\n        this.y = argumento2;\n        let ancho_pantalla_horizontal = this.pilas.camara.borde_derecho;\n        let ancho_pantalla_vertical = this.pilas.camara.borde_abajo;\n        let ancho_imagen = this._figura_ancho;\n        let alto_imagen = this._figura_alto;\n\n        //let abajo = this.pilas.camara.borde_abajo;\n\n        //Obtenemos alto de enemigo\n        //let altoEnemigo = this.pilas.obtener_actor_por_nombre(\"rocaCuadrada\")._figura_alto;\n\n        if (this.x == argumento2) {\n            //if(this.x > 0 &&  this.x < ancho_pantalla)\n            if (this.x > 0) this.x == 0;\n            if (this.x > ancho_pantalla_horizontal - ancho_imagen) this.x == ancho_pantalla_horizontal - ancho_imagen;\n        }\n\n        if (this.y == argumento2) {\n            //if(this.x > 0 &&  this.x < ancho_pantalla)\n            if (this.y > 0) this.y == 0;\n            if (this.y > ancho_pantalla_vertical - alto_imagen) this.y == ancho_pantalla_vertical - alto_imagen;\n        }\n\n\n    }\n\n    getCircleX(radians, radius) {\n        return Math.cos(radians) * radius;\n        this.decir(\"trt\",5);\n        this.pilas.observar(\"math\", this);\n    }\n\n    //console.log(getCircleX(1, 10));\n    // expected output: 5.403023058681398\n\n    //console.log(getCircleX(2, 10));\n    // expected output: -4.161468365471424\n\n    //console.log(getCircleX(Math.PI, 10));\n    // expected output: -10\n\n\n\n\n\n\n}"
+            },
+            {
+                "nombre": "cuerpoGusano0",
+                "codigo": "// @ts-ignore\nclass cuerpoGusano0 extends Actor {\n\n  iniciar() {\n    //this.imagen = \"imagenes:objetos/aceituna\";\n  }\n\n  actualizar(){\n      //Esta linea podria usarlo para hacer seguimiento al jugador\n      let cabeza = this.pilas.obtener_actor_por_nombre(\"cabezaGusano\");\n\n    //Obtenemos alto de enemigo\n    let altoEnemigo = this.pilas.obtener_actor_por_nombre(\"cabezaGusano\")._figura_alto;\n    let anchoEnemigo = this.pilas.obtener_actor_por_nombre(\"cabezaGusano\")._figura_ancho;\n\n      let duracion = 0.1;\n      let veces = 5;\n      \n      let distancia = cabeza.escala;\n      this.pilas.observar(\"escala\", distancia);\n\n      this.hacer_recorrido([cabeza.x ,cabeza.y,altoEnemigo,anchoEnemigo],duracion,veces,true);\n\n\n\n\n      \n  }\n}\n"
+            },
+            {
+                "nombre": "caja",
+                "codigo": "// @ts-ignore\nclass caja extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "dado2",
+                "codigo": "// @ts-ignore\nclass dado2 extends Actor {\n //contador;\n //velocidad_x;\n\n    anchoPantalla;\n    altoPantalla;\n\n    iniciar() {\n        //this.contador = 0;\n        this.velocidad_x = 2;\n        this.velocidad_y = 2;\n\n        //*****Obtenemos el limite del recorrido de nuestro personaje en el eje X e Y\n        //this.anchoPantalla = this.pilas.camara.borde_derecho - this.figura_ancho/2;\n        //this.altoPantalla = this.pilas.camara.borde_arriba - this._figura_alto/2;\n    }\n\n    limite_pantalla() {\n        let ancho_pantalla = this.pilas.camara.borde_derecho - this.figura_ancho/2;\n        let alto_pantalla = this.pilas.camara.borde_arriba - this._figura_alto/2;\n        //let ancho_imagen = this.figura_ancho/2;\n        //let alto_imagen = this._figura_alto /2;\n\n        if (this.x < -ancho_pantalla) this.x = -ancho_pantalla;//lado izquierdo\n        if (this.x > ancho_pantalla) this.x = ancho_pantalla;//lado derecho\n  \n        if (this.y > alto_pantalla) this.y = alto_pantalla;//arriba\n        if (this.y < -alto_pantalla) this.y = -alto_pantalla;//abajo\n\n    }\n\n\n\n\n    actualizar() {\n        this.limite_pantalla();\n        this.entrada();\n        \n\n    }\n\n\n\n\n    entrada() {\n        let velocidad = 5;\n\n        if (this.pilas.control.izquierda) {\n            this.x -= velocidad;\n            //this.contador = 1;\n            //this.decir(\"ESte es el case 1\");\n        }\n\n        if (this.pilas.control.derecha) {\n            this.x += velocidad;\n            //this.contador = 2;\n            //this.decir(\"ESte es el case 2\");\n        }\n\n        if (this.pilas.control.arriba) {\n            this.y += velocidad;\n            //this.contador++;\n        }\n\n        if (this.pilas.control.abajo) {\n            this.y -= velocidad;\n            //this.contador--;\n        }\n    }\n\n\n\n}"
+            },
+            {
+                "nombre": "dado4",
+                "codigo": "// @ts-ignore\nclass dado4 extends Actor {\n contador;\n velocidad_x;\n\n    anchoPantalla;\n    altoPantalla;\n\n    iniciar() {\n        //this.imagen = \"imagenes:objetos/aceituna\";\n        this.contador = 0;\n        this.velocidad_x = 2;\n        this.velocidad_y = 2;\n\n        //Obtenemos el limite del recorrido de nuestro personaje en el eje X\n        this.anchoPantalla = this.pilas.camara.borde_derecho - this.figura_ancho/2;\n\n        this.altoPantalla = this.pilas.camara.borde_arriba - this._figura_alto/2;\n    }\n\n    limite_pantalla() {\n        let ancho_pantalla = this.pilas.camara.borde_derecho - this.figura_ancho/2;\n        let alto_pantalla = this.pilas.camara.borde_arriba - this._figura_alto/2;\n        //let ancho_imagen = this.figura_ancho/2;\n        //let alto_imagen = this._figura_alto /2;\n\n        this.pilas.observar(\"figuraAncho\", this.anchoPantalla);\n\n        if (this.x < -ancho_pantalla) this.x = -ancho_pantalla;//lado izquierdo\n        if (this.x > ancho_pantalla) this.x = ancho_pantalla;//lado derecho\n  \n        if (this.y > alto_pantalla) this.y = alto_pantalla;//arriba\n        if (this.y < -alto_pantalla) this.y = -alto_pantalla;//abajo\n\n        /*\n        if (this.x < -ancho_pantalla + ancho_imagen) this.x = -ancho_pantalla + ancho_imagen;//lado izquierdo\n        if (this.x > ancho_pantalla  - ancho_imagen) this.x = ancho_pantalla - ancho_imagen;//lado derecho\n  \n        if (this.y > alto_pantalla  - alto_imagen) this.y = alto_pantalla  - alto_imagen;//arriba\n        if (this.y < -alto_pantalla + alto_imagen) this.y = -alto_pantalla + alto_imagen;//abajo\n        */\n    }\n\n\n    condicional_switch(){\n         /*\n                switch(this.contador){\n                    case 0:\n                        this.avanzar(30,3);\n                    break;\n        \n                    case 1:\n                        this.avanzar(90,3);\n                        this.decir(\"ESte es el case 1\");\n                    break;\n        \n                    case 2:\n                        this.decir(\"ESte es el case 2\");\n                    break;\n        \n                }\n                */\n    }\n\n    debug(){\n        this.pilas.observar(\"contador\", this.contador);\n\n        //if (this.x < -200) {this.x = -200;}\n        //if (this.x > 200) { this.x = 200; }\n        this.pilas.observar(\"X\", this.x);\n        this.pilas.observar(\"Y\", this.y);\n\n         this.pilas.observar(\"Alto\", this.altoPantalla);\n         this.pilas.observar(\"Ancho\", this.anchoPantalla);\n    }\n\n\n    actualizar() {\n\n        //this.getCircleX(1, 10);\n        this.limite_pantalla();\n        this.entrada();\n        this.condicional_switch();\n\n        \n\n        \n        this.debug();\n\n    }\n\n\n\n\n    entrada() {\n        let velocidad = 5;\n        if (this.pilas.control.izquierda) {\n            this.x -= velocidad;\n            this.contador = 1;\n            //this.decir(\"ESte es el case 1\");\n        }\n\n        if (this.pilas.control.derecha) {\n            this.x += velocidad;\n            this.contador = 2;\n            //this.decir(\"ESte es el case 2\");\n        }\n\n        if (this.pilas.control.arriba) {\n            this.y += velocidad;\n            this.contador++;\n        }\n\n        if (this.pilas.control.abajo) {\n            this.y -= velocidad;\n            this.contador--;\n        }\n    }\n\n    clamp(argumento1: string) {\n        let argumento2 = parseInt(argumento1, 10);\n\n        this.x = argumento2;\n        this.y = argumento2;\n        let ancho_pantalla_horizontal = this.pilas.camara.borde_derecho;\n        let alto_pantalla = this.pilas.camara.borde_abajo;\n        let ancho_imagen = this._figura_ancho;\n        let alto_imagen = this._figura_alto;\n\n        //let abajo = this.pilas.camara.borde_abajo;\n\n        //Obtenemos alto de enemigo\n        //let altoEnemigo = this.pilas.obtener_actor_por_nombre(\"rocaCuadrada\")._figura_alto;\n\n        if (this.x == argumento2) {\n            //if(this.x > 0 &&  this.x < ancho_pantalla)\n            if (this.x > 0) this.x == 0;\n            if (this.x > ancho_pantalla_horizontal - ancho_imagen) this.x == ancho_pantalla_horizontal - ancho_imagen;\n        }\n\n        if (this.y == argumento2) {\n            //if(this.x > 0 &&  this.x < ancho_pantalla)\n            if (this.y > 0) this.y == 0;\n            if (this.y > alto_pantalla - alto_imagen) this.y == alto_pantalla - alto_imagen;\n        }\n\n\n    }\n\n    getCircleX(radians, radius) {\n        return Math.cos(radians) * radius;\n    }\n\n\n\n\n}"
+            },
+            {
+                "nombre": "sol",
+                "codigo": "// @ts-ignore\nclass sol extends Actor {\n\n  iniciar() {}\n\n  actualizar() {}\n}\n"
+            },
+            {
+                "nombre": "planeta",
+                "codigo": "// @ts-ignore\nclass planeta extends Actor {\n\n    velocidad = 5;\n    cuadros_desde_el_ultimo_disparo;\n\n    iniciar() {\n    }\n\n    mirar_en_direccion_al_planeta() {\n        let planeta = this.pilas.obtener_actor_por_nombre(\"sol\");\n        this.rotacion = this.pilas.obtener_angulo_entre_actores(this, planeta);\n\n        //this.x++;\n        //this.y++;\n\n        this.pilas.observar(\"rotacion\", this.rotacion);\n    }\n\n    actualizar() {\n        this.mirar_en_direccion_al_planeta();\n\n        let planeta = this.pilas.obtener_actor_por_nombre(\"sol\");\n        let x = planeta.x;\n        let y = planeta.y;\n        let cx = this.pilas.cursor_x;\n        let cy = this.pilas.cursor_y;\n\n        this.rotacion = this.pilas.obtener_angulo_entre_puntos(x, y, cx, cy);\n        planeta.rotacion = this.pilas.obtener_angulo_entre_puntos(x, y, cx, cy);\n\n\n\n    }\n\n    cuando_hace_click() {\n        //this.disparar_laser();\n    }\n\n}\n"
+            },
+            {
+                "nombre": "dado3",
+                "codigo": "// @ts-ignore\nclass dado3 extends Actor {\n\n  iniciar(){\n      /*\n      this.y = 300;\n\n      this.hacer_recorrido([-200, 0,\n            0, -100,\n            200, 0,\n            0, 100,\n            0, 300\n        ], 7, 0)\n        */\n\n        let distancia = 100;\n        let dado2 = this.pilas.obtener_actor_por_nombre(\"dado2\");\n\n        \n\n        //0 grados\n        let posicion1X = dado2.x + distancia;\n        let posicion1Y = dado2.y + 0;\n        //90 grados\n        let posicion2X = dado2.x + 0;\n        let posicion2Y = dado2.y + distancia;\n        //180 grados\n        let posicion3X = dado2.x - distancia;\n        let posicion3Y = dado2.y + 0;\n        //270 grados\n        let posicion4X = dado2.x + 0;\n        let posicion4Y = dado2.y - distancia;\n        //360 grados\n        //let posicion1X = dado2.x + distancia;\n        //let posicion1Y = dado2.y + 0;\n\n\n        this.x = posicion1X;\n        this.y = posicion1Y;\n\n        this.hacer_recorrido([posicion1X, posicion1Y,\n                                posicion2X, posicion2Y,\n                                posicion3X, posicion3Y,\n                                posicion4X, posicion4Y,\n                                posicion1X, posicion1Y\n\n        ],5,0)\n        \n  } \n\n  actualizar(){\n\n  }\n\n}"
+            },
+            {
+                "nombre": "suelo",
+                "codigo": "// @ts-ignore\nclass suelo extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "nave",
+                "codigo": "// @ts-ignore\nclass nave extends Actor {\n\n    anchoPantalla\n    altoPantalla\n    estadoJugador\n\n    iniciar() {\n        this.estadoJugador = \"despegue\";\n    }\n\n\n    limite_pantalla() {\n        let ancho_pantalla = this.pilas.camara.borde_derecho - this.figura_ancho / 2;\n        let alto_pantalla = this.pilas.camara.borde_arriba - this._figura_alto / 2;\n\n        if (this.x < -ancho_pantalla) this.x = -ancho_pantalla;//lado izquierdo\n        if (this.x > ancho_pantalla) this.x = ancho_pantalla;//lado derecho\n\n        if (this.y > alto_pantalla) this.y = alto_pantalla;//arriba\n        if (this.y < -alto_pantalla) this.y = -alto_pantalla;//abajo\n\n    }\n\n    cuando_hace_click_en_la_pantalla(x: number, y: number, evento) {\n        this.impulsar(0, 10);\n        //this.pilas.reproducir_sonido(\"salto-corto\");\n    }\n\n    movimiento() {\n        if (this.estadoJugador == \"despegue\") {\n            let velocidad = 5;\n            let velocidad_para_doblar = 0.5;\n\n            if (this.pilas.control.arriba) {\n                this.rotacion += this.pilas.azar(-0.05, 0.05);\n                //this.avanzar(this.rotacion, velocidad)\n                this.impulsar(0, 10);\n            }\n\n            if (this.pilas.control.tecla_a) {\n                this.rotacion += velocidad_para_doblar;\n            }\n\n            if (this.pilas.control.tecla_d) {\n                this.rotacion -= velocidad_para_doblar;\n            }\n        }\n    }\n\n\n\n    actualizar() {\n        this.limite_pantalla();\n        //this.rotacion = this.velocidad_y * 5;\n        this.movimiento();\n\n\n\n    }\n\n\n\n\n\n\n\n}"
+            }
+        ],
+        "proyecto": "class Proyecto {\n    iniciar() {\n\n    }\n}"
+    },
+    "escenas": [
+        {
+            "nombre": "escena0",
+            "id": 2,
+            "ancho": 500,
+            "alto": 500,
+            "camara_x": 0,
+            "camara_y": 0,
+            "gravedad_x": 0,
+            "gravedad_y": 0,
+            "fondo": "decoracion:fondos/fondo-espacio_2",
+            "actores": [
+                {
+                    "x": -69.90881458966558,
+                    "y": 24.316109422492502,
+                    "z": 0,
+                    "imagen": "imagenes:disparos/misil",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 0.7,
+                    "escala_y": 0.7,
+                    "transparencia": 0,
+                    "etiqueta": "disparo",
+                    "espejado": true,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": false,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 12356336124258048,
+                    "activo": false,
+                    "nombre": "misil1",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": -193.00911854103342,
+                    "y": 12.158054711246194,
+                    "z": 0,
+                    "imagen": "spr_0",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 270,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 14370962491769010,
+                    "activo": true,
+                    "nombre": "naveApoyo",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": -105.96805684194965,
+                    "y": 8.225297972353104,
+                    "z": 0,
+                    "imagen": "spr_bala_0",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 270,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "disparo",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "circulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 10,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 10769533412536920,
+                    "activo": false,
+                    "nombre": "balaPlayer2",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": -12.932668935671984,
+                    "y": 23.369876288028763,
+                    "z": 0,
+                    "imagen": "spr_nave_2",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 270,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 10001854243821672,
+                    "activo": true,
+                    "nombre": "navePlayer2",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": 206.21583773772397,
+                    "y": -62.52277484151733,
+                    "z": 0,
+                    "imagen": "decoracion:objetos/nube",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 19355088808801416,
+                    "activo": true,
+                    "nombre": "nube",
+                    "habilidades": [
+                        "oscilar verticalmente"
+                    ],
+                    "sensores": []
+                },
+                {
+                    "x": 106.15711252653927,
+                    "y": 69.00212314225053,
+                    "z": 0,
+                    "imagen": "spr_paredmortal_0",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "enemigo",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 90,
+                    "figura_alto": 90,
+                    "figura_radio": 20,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 14851931600855824,
+                    "activo": true,
+                    "nombre": "enemigo",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": -216.5605095541401,
+                    "y": 93.41825902335458,
+                    "z": -10,
+                    "imagen": "imagenes:botones/pantalla-completa",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 50,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 18079979874629770,
+                    "activo": true,
+                    "nombre": "pantalla_completa",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": 7.475083056478411,
+                    "y": 69.76744186046514,
+                    "z": 0,
+                    "imagen": "imagenes:objetos/aceituna",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 10898434578903936,
+                    "activo": true,
+                    "nombre": "aceituna",
+                    "habilidades": [],
+                    "sensores": []
+                }
+            ]
+        },
+        {
+            "id": 12784948192455934,
+            "nombre": "escena1",
+            "ancho": 1000,
+            "alto": 1000,
+            "camara_x": 0,
+            "camara_y": 0,
+            "gravedad_x": 0,
+            "gravedad_y": 1,
+            "fondo": "decoracion:fondos/fondo-negro",
+            "actores": [
+                {
+                    "x": -7.484591758910028,
+                    "y": 25.4282357306289,
+                    "z": 0,
+                    "imagen": "imagenes:dado/dado_1",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "dado",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 35,
+                    "figura_alto": 35,
+                    "figura_radio": 36,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 16744119990732892,
+                    "activo": true,
+                    "nombre": "dado1",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": 76.41374476944321,
+                    "y": 80.88636035701762,
+                    "z": 0,
+                    "imagen": "imagenes:dado/dado_2",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "dado",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 35,
+                    "figura_alto": 35,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0.9,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 12047638836192008,
+                    "activo": true,
+                    "nombre": "dado2",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": -22.370910889864632,
+                    "y": -82.2546533918744,
+                    "z": 0,
+                    "imagen": "imagenes:dado/dado_4",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "dado",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 35,
+                    "figura_alto": 35,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0.9,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 14755829725094716,
+                    "activo": false,
+                    "nombre": "dado4",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": 150.74309978768576,
+                    "y": -6.3694267515923,
+                    "z": 0,
+                    "imagen": "imagenes:dado/dado_3",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": false,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 15057249666054996,
+                    "activo": true,
+                    "nombre": "dado3",
+                    "habilidades": [],
+                    "sensores": []
+                }
+            ]
+        },
+        {
+            "id": 15522503650740124,
+            "nombre": "test",
+            "ancho": 1000,
+            "alto": 1000,
+            "camara_x": 0,
+            "camara_y": 0,
+            "gravedad_x": 0,
+            "gravedad_y": 1,
+            "fondo": "decoracion:fondos/fondo-plano",
+            "actores": [
+                {
+                    "x": -117.62011480695125,
+                    "y": 50.947550522922086,
+                    "z": 0,
+                    "imagen": "imagenes:objetos/aceituna",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "circulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 15,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 15052267608428764,
+                    "activo": false,
+                    "nombre": "cabezaGusano",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": -127.55838641188961,
+                    "y": -182.42038216560513,
+                    "z": 0,
+                    "imagen": "imagenes:objetos/aceituna",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "circulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 17,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 12176624306413968,
+                    "activo": false,
+                    "nombre": "cuerpoGusano0",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": 1.915708812260533,
+                    "y": -182.9501915708812,
+                    "z": 0,
+                    "imagen": "spr_nave_2",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 16200278393929072,
+                    "activo": false,
+                    "nombre": "navePlayer1",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": -39.34191702432045,
+                    "y": -135.90844062947065,
+                    "z": 0,
+                    "imagen": "spr_bala_0",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 19852840517561136,
+                    "activo": false,
+                    "nombre": "balaPlayer1",
+                    "habilidades": [],
+                    "sensores": []
+                }
+            ]
+        },
+        {
+            "id": 18765307874330480,
+            "nombre": "escena2",
+            "ancho": 1000,
+            "alto": 1000,
+            "camara_x": 8.810572687224635,
+            "camara_y": 0,
+            "gravedad_x": 0,
+            "gravedad_y": 1,
+            "fondo": "decoracion:fondos/fondo-azul-oscuro",
+            "actores": [
+                {
+                    "x": 8.810572687224635,
+                    "y": 0,
+                    "z": 0,
+                    "imagen": "bloques:plataformas/plataforma-12",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 17518943599253632,
+                    "activo": true,
+                    "nombre": "sol",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": 111.47811832240313,
+                    "y": 133.38966159712294,
+                    "z": 0,
+                    "imagen": "imagenes:objetos/pelota",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 16968877739092356,
+                    "activo": true,
+                    "nombre": "planeta",
+                    "habilidades": [],
+                    "sensores": []
+                }
+            ]
+        },
+        {
+            "id": 12785163114390624,
+            "nombre": "Area1",
+            "ancho": 600,
+            "alto": 1000,
+            "camara_x": 0,
+            "camara_y": 0,
+            "gravedad_x": 0,
+            "gravedad_y": 1,
+            "fondo": "decoracion:fondos/fondo-azul-oscuro",
+            "actores": [
+                {
+                    "x": 25.996407238100858,
+                    "y": -202.98772804943297,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/suelo",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 600,
+                    "figura_alto": 25,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "white",
+                    "id": 15715557013824276,
+                    "activo": true,
+                    "nombre": "suelo",
+                    "habilidades": [],
+                    "sensores": []
+                },
+                {
+                    "x": -1.165501165501155,
+                    "y": -175.99067599067598,
+                    "z": 0,
+                    "imagen": "spr_cohete_0",
+                    "centro_x": 0.19999999999999982,
+                    "centro_y": 0.5,
+                    "rotacion": 90,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": true,
+                    "figura_ancho": 24,
+                    "figura_alto": 45,
+                    "figura_radio": 11,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "color": "bg-yellow",
+                    "id": 14979727876275700,
+                    "activo": true,
+                    "nombre": "nave",
+                    "habilidades": [],
+                    "sensores": []
+                }
+            ]
+        }
+    ],
+    "fps": 60,
+    "modo_de_video": "suavizado",
+    "sonidos": [
+        {
+            "nombre": "laser",
+            "ruta": "sonidos/laser.mp3"
+        },
+        {
+            "nombre": "explosion",
+            "ruta": "sonidos/explosion.mp3"
+        },
+        {
+            "nombre": "gallina",
+            "ruta": "sonidos/gallina.mp3"
+        },
+        {
+            "nombre": "moneda",
+            "ruta": "sonidos/moneda.mp3"
+        },
+        {
+            "nombre": "salto-corto",
+            "ruta": "sonidos/salto-corto.mp3"
+        },
+        {
+            "nombre": "salto-largo",
+            "ruta": "sonidos/salto-largo.mp3"
+        },
+        {
+            "nombre": "seleccion-aguda",
+            "ruta": "sonidos/seleccion-aguda.mp3"
+        },
+        {
+            "nombre": "seleccion-grave",
+            "ruta": "sonidos/seleccion-grave.mp3"
+        },
+        {
+            "nombre": "comer",
+            "ruta": "sonidos/comer.mp3"
+        }
+    ]
+}
