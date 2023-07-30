@@ -748,7 +748,7 @@
             },
             {
                 "nombre": "nave",
-                "codigo": "// @ts-ignore\nclass nave extends Actor {\n\n    anchoPantalla\n    altoPantalla\n    estadoJugador\n\n    iniciar() {\n        this.estadoJugador = \"despegue\";\n    }\n\n\n    limite_pantalla() {\n        let ancho_pantalla = this.pilas.camara.borde_derecho - this.figura_ancho / 2;\n        let alto_pantalla = this.pilas.camara.borde_arriba - this._figura_alto / 2;\n\n        if (this.x < -ancho_pantalla) this.x = -ancho_pantalla;//lado izquierdo\n        if (this.x > ancho_pantalla) this.x = ancho_pantalla;//lado derecho\n\n        if (this.y > alto_pantalla) this.y = alto_pantalla;//arriba\n        if (this.y < -alto_pantalla) this.y = -alto_pantalla;//abajo\n\n    }\n\n    cuando_hace_click_en_la_pantalla(x: number, y: number, evento) {\n        this.impulsar(0, 10);\n        //this.pilas.reproducir_sonido(\"salto-corto\");\n    }\n\n    movimiento() {\n        if (this.estadoJugador == \"despegue\") {\n            let velocidad = 5;\n            let velocidad_para_doblar = 0.5;\n\n            if (this.pilas.control.arriba) {\n                this.rotacion += this.pilas.azar(-0.05, 0.05);\n                //this.avanzar(this.rotacion, velocidad)\n                this.impulsar(0, 10);\n            }\n\n            if (this.pilas.control.tecla_a) {\n                this.rotacion += velocidad_para_doblar;\n            }\n\n            if (this.pilas.control.tecla_d) {\n                this.rotacion -= velocidad_para_doblar;\n            }\n        }\n    }\n\n\n\n    actualizar() {\n        this.limite_pantalla();\n        //this.rotacion = this.velocidad_y * 5;\n        this.movimiento();\n\n\n\n    }\n\n\n\n\n\n\n\n}"
+                "codigo": "// @ts-ignore\nclass nave extends Actor {\n\n    anchoPantalla\n    altoPantalla\n    estadoJugador\n\n    iniciar() {\n        this.estadoJugador = \"despegue\";\n    }\n\n\n    limite_pantalla() {\n        let ancho_pantalla = this.pilas.camara.borde_derecho - this.figura_ancho / 2;\n        let alto_pantalla = this.pilas.camara.borde_arriba - this.figura_alto / 2;\n\n        if (this.x < -ancho_pantalla) this.x = -ancho_pantalla;//lado izquierdo\n        if (this.x > ancho_pantalla) this.x = ancho_pantalla;//lado derecho\n\n        if (this.y > alto_pantalla) this.y = alto_pantalla;//arriba\n        if (this.y < -alto_pantalla) this.y = -alto_pantalla;//abajo\n\n    }\n\n    cuando_hace_click_en_la_pantalla(x: number, y: number, evento) {\n        this.impulsar(0, 10);\n        //this.pilas.reproducir_sonido(\"salto-corto\");\n    }\n\n    movimiento() {\n        if (this.estadoJugador == \"despegue\") {\n            let velocidad = 5;\n            let velocidad_para_doblar = 0.5;\n\n            if (this.pilas.control.arriba) {\n                this.rotacion += this.pilas.azar(-0.05, 0.05);\n                //this.avanzar(this.rotacion, velocidad)\n                this.impulsar(0, 10);\n            }\n\n            if (this.pilas.control.tecla_a) {\n                this.rotacion += velocidad_para_doblar;\n            }\n\n            if (this.pilas.control.tecla_d) {\n                this.rotacion -= velocidad_para_doblar;\n            }\n        }\n    }\n\n\n\n    actualizar() {\n        this.limite_pantalla();\n        //this.rotacion = this.velocidad_y * 5;\n        this.movimiento();\n\n\n\n    }\n\n\n\n\n\n\n\n}"
             }
         ],
         "proyecto": "class Proyecto {\n    iniciar() {\n\n    }\n}"
@@ -794,7 +794,8 @@
                     "activo": false,
                     "nombre": "misil1",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": -193.00911854103342,
@@ -825,7 +826,8 @@
                     "activo": true,
                     "nombre": "naveApoyo",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": -105.96805684194965,
@@ -856,7 +858,8 @@
                     "activo": false,
                     "nombre": "balaPlayer2",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": -12.932668935671984,
@@ -887,7 +890,8 @@
                     "activo": true,
                     "nombre": "navePlayer2",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": 206.21583773772397,
@@ -920,7 +924,8 @@
                     "habilidades": [
                         "oscilar verticalmente"
                     ],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": 106.15711252653927,
@@ -951,7 +956,8 @@
                     "activo": true,
                     "nombre": "enemigo",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": -216.5605095541401,
@@ -982,7 +988,8 @@
                     "activo": true,
                     "nombre": "pantalla_completa",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": 7.475083056478411,
@@ -1013,7 +1020,8 @@
                     "activo": true,
                     "nombre": "aceituna",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 }
             ]
         },
@@ -1057,7 +1065,8 @@
                     "activo": true,
                     "nombre": "dado1",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": 76.41374476944321,
@@ -1088,7 +1097,8 @@
                     "activo": true,
                     "nombre": "dado2",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": -22.370910889864632,
@@ -1119,7 +1129,8 @@
                     "activo": false,
                     "nombre": "dado4",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": 150.74309978768576,
@@ -1150,7 +1161,8 @@
                     "activo": true,
                     "nombre": "dado3",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 }
             ]
         },
@@ -1194,7 +1206,8 @@
                     "activo": false,
                     "nombre": "cabezaGusano",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": -127.55838641188961,
@@ -1225,7 +1238,8 @@
                     "activo": false,
                     "nombre": "cuerpoGusano0",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": 1.915708812260533,
@@ -1256,7 +1270,8 @@
                     "activo": false,
                     "nombre": "navePlayer1",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": -39.34191702432045,
@@ -1287,7 +1302,8 @@
                     "activo": false,
                     "nombre": "balaPlayer1",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 }
             ]
         },
@@ -1331,7 +1347,8 @@
                     "activo": true,
                     "nombre": "sol",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": 111.47811832240313,
@@ -1362,7 +1379,8 @@
                     "activo": true,
                     "nombre": "planeta",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 }
             ]
         },
@@ -1406,7 +1424,8 @@
                     "activo": true,
                     "nombre": "suelo",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 },
                 {
                     "x": -1.165501165501155,
@@ -1437,7 +1456,8 @@
                     "activo": true,
                     "nombre": "nave",
                     "habilidades": [],
-                    "sensores": []
+                    "sensores": [],
+                    "lasers": []
                 }
             ]
         }
@@ -1481,5 +1501,145 @@
             "nombre": "comer",
             "ruta": "sonidos/comer.mp3"
         }
+    ],
+    "bloques": {
+        "proyecto": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"ZC`*TK^}PI+^~52^ak!H\" x=\"35\" y=\"44\"></block></xml>",
+        "escenas": [
+            {
+                "nombre": "escena0",
+                "bloques": {
+                    "texto": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"escena_al_iniciar\" id=\"ms2+If6B9Dl^C;YsS/{x\" x=\"-225\" y=\"-202\"></block><block type=\"escena_cuando_hace_click\" id=\"=UY{}h^MjrUa!2]Q!d*C\" x=\"-224\" y=\"-111\"></block><block type=\"escena_al_actualizar\" id=\"3oE27p+:PzlhcbX-XBVe\" x=\"-221\" y=\"-18\"></block></xml>",
+                    "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('ms2+If6B9Dl^C;YsS/{x', this.id);\n}\nescena._bloques_al_iniciar = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('=UY{}h^MjrUa!2]Q!d*C', this.id);\n}\nescena._bloques_cuando_hace_click = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('3oE27p+:PzlhcbX-XBVe', this.id);\n}\nescena._bloques_al_actualizar = function() {\n\n  };"
+                }
+            },
+            {
+                "nombre": "escena1",
+                "bloques": {
+                    "texto": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"escena_al_iniciar\" id=\"ms2+If6B9Dl^C;YsS/{x\" x=\"-225\" y=\"-202\"></block><block type=\"escena_cuando_hace_click\" id=\"=UY{}h^MjrUa!2]Q!d*C\" x=\"-224\" y=\"-111\"></block><block type=\"escena_al_actualizar\" id=\"3oE27p+:PzlhcbX-XBVe\" x=\"-221\" y=\"-18\"></block></xml>",
+                    "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('ms2+If6B9Dl^C;YsS/{x', this.id);\n}\nescena._bloques_al_iniciar = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('=UY{}h^MjrUa!2]Q!d*C', this.id);\n}\nescena._bloques_cuando_hace_click = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('3oE27p+:PzlhcbX-XBVe', this.id);\n}\nescena._bloques_al_actualizar = function() {\n\n  };"
+                }
+            },
+            {
+                "nombre": "test",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"escena_al_iniciar\" id=\"ms2+If6B9Dl^C;YsS/{x\" x=\"-225\" y=\"-202\"></block><block type=\"escena_cuando_hace_click\" id=\"=UY{}h^MjrUa!2]Q!d*C\" x=\"-224\" y=\"-111\"></block><block type=\"escena_al_actualizar\" id=\"3oE27p+:PzlhcbX-XBVe\" x=\"-221\" y=\"-18\"></block></xml>"
+            },
+            {
+                "nombre": "escena2",
+                "bloques": {
+                    "texto": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"escena_al_iniciar\" id=\"ms2+If6B9Dl^C;YsS/{x\" x=\"-225\" y=\"-202\"></block><block type=\"escena_cuando_hace_click\" id=\"=UY{}h^MjrUa!2]Q!d*C\" x=\"-224\" y=\"-111\"></block><block type=\"escena_al_actualizar\" id=\"3oE27p+:PzlhcbX-XBVe\" x=\"-221\" y=\"-18\"></block></xml>",
+                    "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('ms2+If6B9Dl^C;YsS/{x', this.id);\n}\nescena._bloques_al_iniciar = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('=UY{}h^MjrUa!2]Q!d*C', this.id);\n}\nescena._bloques_cuando_hace_click = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('3oE27p+:PzlhcbX-XBVe', this.id);\n}\nescena._bloques_al_actualizar = function() {\n\n  };"
+                }
+            },
+            {
+                "nombre": "Area1",
+                "bloques": {
+                    "texto": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"escena_al_iniciar\" id=\"ms2+If6B9Dl^C;YsS/{x\" x=\"-225\" y=\"-202\"></block><block type=\"escena_cuando_hace_click\" id=\"=UY{}h^MjrUa!2]Q!d*C\" x=\"-224\" y=\"-111\"></block><block type=\"escena_al_actualizar\" id=\"3oE27p+:PzlhcbX-XBVe\" x=\"-221\" y=\"-18\"></block></xml>",
+                    "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('ms2+If6B9Dl^C;YsS/{x', this.id);\n}\nescena._bloques_al_iniciar = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('=UY{}h^MjrUa!2]Q!d*C', this.id);\n}\nescena._bloques_cuando_hace_click = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('3oE27p+:PzlhcbX-XBVe', this.id);\n}\nescena._bloques_al_actualizar = function() {\n\n  };"
+                }
+            }
+        ],
+        "actores": [
+            {
+                "nombre": "dado1",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "pelota",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "techo",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "suelo",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "navePlayer1",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "misil1",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "balaPlayer1",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "naveApoyo",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "balaPlayer2",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "navePlayer2",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "nube",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "enemigo",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "pantalla_completa",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "aceituna",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "cabezaGusano",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "cuerpoGusano0",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "caja",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "dado2",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "dado4",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "sol",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "planeta",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "dado3",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "suelo",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "nave",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            }
+        ]
+    },
+    "plegados": {},
+    "etiquetas": [
+        "pilas"
     ]
 }

@@ -3,7 +3,7 @@
     "ancho": 600,
     "alto": 800,
     "tamaño": "600x800",
-    "nombre_de_la_escena_inicial": "escena1",
+    "nombre_de_la_escena_inicial": "Menu",
     "imagenes": [],
     "animaciones": [
         {
@@ -505,37 +505,45 @@
         "escenas": [
             {
                 "nombre": "escena1",
-                "codigo": "class escena1 extends Escena {\n    iniciar() {\n\n    }\n\n    actualizar() {\n\n    }\n}"
+                "codigo": "class escena1 extends Escena {\n\n  //llave_obtenida = false;\n\n  iniciar() {\n    for (let i = 0; i < 10; i++) {\n      this.pilas.clonar_en_posicion_al_azar(\"moneda\");\n    }\n\n    //CREAR AL JUGADOR\n    this.pilas.clonar_en(\"TRN\", 5.72, -365);\n\n    //NUMERO ESCENA\n    this.proyecto.numero_escena = 1;\n  }\n\n  actualizar() {\n\n    //SOLO PARA PRUEBAS--------------------\n    /*\n    if (this.pilas.control.tecla_a) {\n      //this.pilas.reiniciar_escena;\n      this.pilas.cambiar_escena(\"escena1\");\n    }\n    */\n    //--------------------------------\n  }\n\n  cuando_llega_el_mensaje_llave_obtenida() {\n    this.proyecto.llave_obtenida = true;\n  }\n\n}"
             },
             {
                 "nombre": "escena2",
-                "codigo": "class escena2 extends Escena {\n    iniciar() {\n\n    }\n\n    actualizar() {\n\n    }\n}"
+                "codigo": "class escena2 extends Escena {\n\n  iniciar() {\n    for (let i = 0; i < 10; i++) {\n      this.pilas.clonar_en_posicion_al_azar(\"moneda\");\n    }\n\n    //CREAR AL JUGADOR\n    this.pilas.clonar_en(\"TRN\", 5.72, -307);\n\n    //NUMERO ESCENA\n    //this.proyecto.numero_escena = 2;\n  }\n\n  actualizar() {\n\n  }\n\n  cuando_llega_el_mensaje_llave_obtenida() {\n    this.proyecto.llave_obtenida = true;\n  }\n}"
+            },
+            {
+                "nombre": "Menu",
+                "codigo": "class Menu extends Escena {\n\n  iniciar() {\n    this.proyecto.estado_juego = \"menu\";\n  }\n\n  actualizar() {\n\n  }\n\n}"
+            },
+            {
+                "nombre": "escenaTransicion",
+                "codigo": "class escenaTransicion extends Escena {\n\n  iniciar() {\n\n  }\n\n  actualizar() {\n    this.pilas.luego(2, () => {\n      if (this.proyecto.estado_juego == \"ganaste\") {\n        if (this.proyecto.numero_escena == 2) this.pilas.cambiar_escena(\"escena2\"); else\n        if (this.proyecto.numero_escena == 3) this.pilas.cambiar_escena(\"escena3\"); else {\n            this.pilas.cambiar_escena(\"Menu\");\n        }\n\n      } else {\n        this.pilas.cambiar_escena(\"Menu\");\n      }\n    }\n    );\n  }\n\n}"
+            },
+            {
+                "nombre": "escena3",
+                "codigo": "class escena3 extends Escena {\n\n  iniciar() {\n    for (let i = 0; i < 10; i++) {\n      this.pilas.clonar_en_posicion_al_azar(\"moneda\");\n    }\n\n    for (let i = 0; i < 30; i += 5) {\n      this.pilas.clonar_en_posicion_al_azar(\"plataforma\");\n    }\n\n    //CREAR AL JUGADOR\n    this.pilas.clonar_en(\"TRN\", 5.72, -307);\n    this.pilas.clonar_en(\"barra_de_energia\", 200, 350);\n    this.pilas.clonar_en(\"llave\", 200, 300);\n\n    //NUMERO ESCENA\n    //this.proyecto.numero_escena = 2;\n  }\n\n  actualizar() {\n\n  }\n\n  cuando_llega_el_mensaje_llave_obtenida() {\n    this.proyecto.llave_obtenida = true;\n  }\n\n}"
             }
         ],
         "actores": [
             {
                 "nombre": "plataforma",
-                "codigo": "// @ts-ignore\nclass plataforma extends Actor {\n    iniciar() {\n\n    }\n}"
+                "codigo": "// @ts-ignore\nclass plataforma extends Actor {\n  iniciar() {\n\n  }\n}"
             },
             {
                 "nombre": "caja",
                 "codigo": "// @ts-ignore\nclass caja extends Actor {\n\n  posX1 = 0;\n  posX2 = -100;\n  posX3 = 100;\n  contador = 0;\n\n  iniciar() {\n\n  }\n\n\n\n  actualizar() {\n    //let velocidad = 5;\n\n    if (this.contador == -1) { this.x = -100 } else\n      if (this.contador == 0) { this.x = 0 } else\n        if (this.contador == 1) { this.x = 100 }\n\n\n\n    \n        if (this.pilas.control.izquierda) {\n          if(this.contador == 0){this.contador = -1;}else\n          if(this.contador == 1){this.contador = 0;}\n          //this.contador--;\n          \n        }else\n        if (this.pilas.control.derecha) {\n          if(this.contador == 0){this.contador = 1;}else\n          if(this.contador == -1){this.contador = 0;}\n          //this.contador++;\n          \n        }\n        \n\n\n\n    this.pilas.observar(\"contador\", this.contador);\n\n\n  }\n\n\n}"
             },
             {
-                "nombre": "pelota",
-                "codigo": "// @ts-ignore\nclass pelota extends Actor {\n    iniciar() {\n\n    }\n}"
-            },
-            {
                 "nombre": "TRN",
-                "codigo": "// @ts-ignore\nclass TRN extends Actor {\n\n  velocidad = 0;\n  limiteVelocidadY = 2;\n  cuadros_desde_el_ultimo_disparo: number;\n  DERECHA = 0; IZQUIERDA = 180;\n  movHorizontal = 0;\n  //gravedad = 15;\n\n  iniciar() {\n    this.animacion = \"nave_en_reposo\";\n    this.cuadros_desde_el_ultimo_disparo = 0;\n    //this.dinamico = false;\n  }\n\n  actualizar() {\n    this.cuadros_desde_el_ultimo_disparo += 1;\n    //this.avanzar(270, this.gravedad);\n    //this.cuando_colisiona();\n\n    //MOVIMIENTO HORIZONTAL--------------------------------------\n    if (this.pilas.control.izquierda) {\n      //this.rotacion += this.velocidad;\n      this.movHorizontal += 0.1;\n      this.avanzar(this.IZQUIERDA, this.movHorizontal / 2);\n      this.animacion = \"nave_girando_a_la_izquierda\";\n    }\n\n    if (this.pilas.control.derecha) {\n      //this.rotacion -= this.velocidad;\n      this.movHorizontal += 0.1;\n      this.avanzar(this.DERECHA, this.movHorizontal / 2);\n      this.animacion = \"nave_girando_a_la_derecha\";\n    }\n\n    //DISPARO---------------------------------------------------\n    if (this.pilas.control.espacio && this.cuadros_desde_el_ultimo_disparo > 5) {\n      this.disparar();\n    }\n\n    //AVANCE\n    if (this.pilas.control.arriba) {\n      this.velocidad += 0.1;\n      this.avanzar(this.rotacion, this.velocidad);\n      //Controla la velocidad\n      if (this.velocidad > this.limiteVelocidadY) {\n        this.velocidad = this.limiteVelocidadY;\n      }\n\n      this.animacion = \"nave_avanzando\";\n      //Cuando se pulsa la tecla arriba se anula la gravedad en Y\n      this.pilas.fisica.gravedad_y = 0;\n    } else {\n      if (!this.pilas.control.izquierda && !this.pilas.control.derecha) {\n        this.animacion = \"nave_en_reposo\";\n        //Cancela la velocidad horizontal\n        this.movHorizontal = 0;\n      }\n      //Si no se presiona la tecla arriba la gravedad en Y será 0.5\n      //Y la velocidad vuelve a cero\n      this.pilas.fisica.gravedad_y += 0.01;\n      this.velocidad = 0;\n    }\n\n\n\n\n  }\n\n  disparar() {\n    let laser = this.pilas.actores.laser();\n    laser.x = this.x;\n    laser.y = this.y;\n    laser.rotacion = this.rotacion;\n    laser.z = this.z + 1;\n    this.cuadros_desde_el_ultimo_disparo = 0;\n  }\n\n\n  cuando_comienza_una_colision(actor: Actor) {\n    //Cuando colisiona con el suelo\n    if (actor.tiene_etiqueta(\"plataforma\")) {\n      //this.tipoArma++;\n      //this.reproducir_sonido(\"moneda\");\n      this.enviar_mensaje_global(\"colision_plataforma\");\n      //this.eliminar();\n      //this.dinamico = false;\n\n      let explosion = this.pilas.actores.explosion();\n      explosion.escala = 0.2;\n      explosion.x = this.x;\n      explosion.y = this.y;\n\n    }\n  }\n\n\n\n\n\n\n  /*\n    // Se invoca cuando colisiona con un sensor. Si lo que buscas es hacer\n    // que la colisión sea entre figuras no sensores usá la función\n    // \"cuando_comienza_una_colision\".\n    cuando_colisiona(actor: Actor) {\n      this.eliminar();\n  \n      let explosion = this.pilas.actores.explosion();\n      explosion.x = this.x;\n      explosion.y = this.y;\n    }*/\n\n\n}"
+                "codigo": "// @ts-ignore\nclass TRN extends Actor {\n\n  velocidad = 0;\n  limiteVelocidadY = 2;\n  cuadros_desde_el_ultimo_disparo: number;\n  DERECHA = 0; IZQUIERDA = 180;\n  velocidadHorizontal = 0;\n  //gravedad = 15;\n  estado_nave: string;\n  anchoPantalla: number;\n  altoPantalla: number;\n\n  iniciar() {\n    this.animacion = \"nave_en_reposo\";\n    this.cuadros_desde_el_ultimo_disparo = 0;\n    //this.dinamico = false;\n    this.estado_nave = \"reposo\";\n    //Obtenemos el limite del recorrido de nuestro personaje en el eje X\n    this.anchoPantalla = this.pilas.camara.borde_derecho;\n    this.altoPantalla = this.pilas.camara.borde_arriba;\n\n  }\n\n  actualizar() {\n    this.cuadros_desde_el_ultimo_disparo += 1;\n    //this.avanzar(270, this.gravedad);\n    //this.cuando_colisiona();\n\n    //IMPULSO----------------------------------------------------------------\n    if (this.pilas.control.arriba) {\n      this.animacion = \"nave_avanzando\";\n      this.estado_nave = \"volando\";\n      this.proyecto.estado_juego = \"jugando\";\n\n      this.velocidad += 0.1;\n      this.avanzar(this.rotacion, this.velocidad);\n\n      //Controla la velocidad\n      if (this.velocidad > this.limiteVelocidadY) {\n        this.velocidad = this.limiteVelocidadY;\n      }\n\n      //Cuando se pulsa la tecla arriba se anula la gravedad en Y\n      this.pilas.fisica.gravedad_y = 0;\n    } else {\n      if (!this.pilas.control.izquierda && !this.pilas.control.derecha) {\n        this.animacion = \"nave_en_reposo\";\n        //Cancela la velocidad horizontal\n        this.velocidadHorizontal = 0;\n      }\n      //Si no se presiona la tecla arriba la gravedad en Y será 0.5\n      //Y la velocidad vuelve a cero\n      this.pilas.fisica.gravedad_y += 0.01;\n      this.velocidad = 0;\n    }\n\n    //MOVIMIENTO HORIZONTAL--------------------------------------\n    if (this.estado_nave == \"volando\") {\n      if (this.pilas.control.izquierda) {\n        //if (this.rotacion != 90) { this.rotacion += this.velocidad; }\n        //this.rotacion += this.velocidad;\n        this.velocidadHorizontal = 3;\n        this.avanzar(this.IZQUIERDA, this.velocidadHorizontal / 2);\n        this.animacion = \"nave_girando_a_la_izquierda\";\n      }\n\n      if (this.pilas.control.derecha) {\n        //if (this.rotacion != 90) { this.rotacion -= this.velocidad; }\n        //this.rotacion -= this.velocidad;\n        this.velocidadHorizontal = 3;\n        this.avanzar(this.DERECHA, this.velocidadHorizontal / 2);\n        this.animacion = \"nave_girando_a_la_derecha\";\n      }\n\n    }\n\n    this.control_limites_pantalla();\n\n  }\n\n  control_limites_pantalla () {\n    if (this.x > this.anchoPantalla - this.figura_ancho ){this.x = this.anchoPantalla - this.figura_ancho} else\n    if (this.x < -this.anchoPantalla + this.figura_ancho){ this.x = -this.anchoPantalla + this.figura_ancho}else\n\n    if ( this.y > this.altoPantalla) {this.y = this.altoPantalla}else\n    if ( this.y < -this.altoPantalla) {\n      //this.proyecto.estado_juego = \"perdiste\";\n      //this.eliminar();\n      //this.pilas.cambiar_escena(\"escenaTransicion\");\n      //this.enviar_mensaje_global(\"nave_perdida\");\n    }\n  }\n\n  cuando_comienza_una_colision(actor: Actor) {\n    //Cuando colisiona con el suelo\n    if (actor.tiene_etiqueta(\"plataforma\")) {\n      //this.tipoArma++;\n      //this.reproducir_sonido(\"moneda\");\n      this.enviar_mensaje_global(\"colision_plataforma\");//Este mensaje lo recibe el actor barra_de_energia\n      //this.eliminar();\n      //this.dinamico = false;\n      this.estado_nave = \"reposo\";\n\n      if (this.proyecto.estado_juego == \"jugando\") {\n        let explosion = this.pilas.actores.explosion();\n        explosion.escala = 0.2;\n        explosion.x = this.x;\n        explosion.y = this.y;\n      }\n    }\n\n    if (actor.tiene_etiqueta(\"moneda\")) {\n      this.reproducir_sonido(\"moneda\");\n      actor.eliminar();\n    }\n\n    if (actor.tiene_etiqueta(\"llave\")) {\n      this.reproducir_sonido(\"moneda\");\n      //actor.escala +=0.3;\n      actor.eliminar();\n      this.enviar_mensaje_global(\"llave_obtenida\");//Este mensaje lo recibe escena1\n      this.decir(\"Llave Obtenida, Regrese a la base\", 3, -10);\n    }\n\n    //AQUI SE DEFINE SI PASA A LA SIGUIENTE ESCENA O REINICIA EL JUEGO\n    if (actor.tiene_etiqueta(\"base\")) {\n      if (this.proyecto.llave_obtenida) {\n        //this.pilas.cambiar_escena(\"escena2\");\n        this.proyecto.numero_escena++;\n        this.proyecto.estado_juego = \"ganaste\";\n        this.pilas.cambiar_escena(\"escenaTransicion\");\n      }\n      \n    }\n\n  }\n\n}\n"
             },
             {
                 "nombre": "barra_de_energia",
-                "codigo": "// @ts-ignore\nclass barra_de_energia extends PizarraBase {\n\n  barra_largo: number = 200;\n  barra_alto: number = 15;\n  vida_actual: number = 100; // valor entre 0 y 100\n\n  private vida_anterior: number = 0;\n\n  iniciar() {\n    super.iniciar();\n    this.imagen = \"imagenes:basicos/invisible\";\n  }\n\n  actualizar() {\n    this.dibujar();\n    //this.vida_actual -= 0.2;\n  }\n\n  cuando_llega_el_mensaje_colision_plataforma() {\n    this.vida_actual -= 5; //Resta energia\n\n    if (this.vida_actual <= 0) {\n      //Eliminamos nuestra nave\n      let player = this.pilas.obtener_actor_por_nombre(\"TRN\");\n      player.eliminar();\n\n      //this.pilas.enviar_mensaje_global(\"energia_cero\");\n    }\n  }\n\n  dibujar() {\n    if (this.vida_actual === this.vida_anterior) {\n      return;\n    }\n\n    this.vida_actual = Math.max(0, this.vida_actual);\n    this.vida_actual = Math.min(100, this.vida_actual);\n    this.vida_anterior = this.vida_actual;\n    this.dibujar_barra();\n  }\n\n  private dibujar_barra() {\n    let vida = this.vida_actual;\n    let largo = this.barra_largo;\n    let alto = this.barra_alto;\n    let x = -largo / 2;\n    let y = +alto / 2;\n\n    this.limpiar();\n    this.dibujar_borde_de_rectangulo(x, y, largo, alto, \"blanco\", 4);\n    this.dibujar_rectangulo(x, y, largo, alto, \"rojo\");\n\n    this.dibujar_rectangulo(x, y, (largo / 100) * vida, alto, \"amarillo\");\n  }\n}\n"
+                "codigo": "// @ts-ignore\nclass barra_de_energia extends PizarraBase {\n\n  barra_largo: number = 200;\n  barra_alto: number = 15;\n  vida_actual: number; // valor entre 0 y 100\n\n  private vida_anterior: number = 0;\n\n  iniciar() {\n    super.iniciar();\n    this.imagen = \"imagenes:basicos/invisible\";\n    this.vida_actual = this.proyecto.vida_actual;\n  }\n\n  actualizar() {\n    this.dibujar();\n    //this.vida_actual -= 0.2;\n  }\n\n  cuando_llega_el_mensaje_colision_plataforma() {\n    //Evita que le reste vida antes de que presione la tecla arriba\n    if (this.proyecto.estado_juego == \"jugando\"){ this.vida_actual -= 25;} //Resta energia\n\n    if (this.vida_actual <= 0) {\n      //Eliminamos nuestra nave\n      let player = this.pilas.obtener_actor_por_nombre(\"TRN\");\n      player.eliminar();\n      this.proyecto.estado_juego = \"perdiste\";\n      this.pilas.cambiar_escena(\"escenaTransicion\");\n      \n\n      //this.pilas.enviar_mensaje_global(\"energia_cero\");\n    }\n  }\n\n\n  dibujar() {\n    if (this.vida_actual === this.vida_anterior) {return;}\n\n    this.vida_actual = Math.max(0, this.vida_actual);\n    this.vida_actual = Math.min(100, this.vida_actual);\n    this.vida_anterior = this.vida_actual;\n    this.dibujar_barra();\n  }\n\n  private dibujar_barra() {\n    let vida = this.vida_actual;\n    let largo = this.barra_largo;\n    let alto = this.barra_alto;\n    let x = -largo / 2;\n    let y = +alto / 2;\n\n    this.limpiar();\n    this.dibujar_borde_de_rectangulo(x, y, largo, alto, \"blanco\", 4);\n    this.dibujar_rectangulo(x, y, largo, alto, \"rojo\");\n\n    this.dibujar_rectangulo(x, y, (largo / 100) * vida, alto, \"amarillo\");\n  }\n}\n"
             },
             {
                 "nombre": "plataforma1",
-                "codigo": "// @ts-ignore\nclass plataforma1 extends Actor {\n    iniciar() {\n\n    }\n}"
+                "codigo": "// @ts-ignore\nclass plataforma1 extends Actor {\n  iniciar() {\n\n  }\n}"
             },
             {
                 "nombre": "plataforma2",
@@ -552,9 +560,129 @@
             {
                 "nombre": "plataforma5",
                 "codigo": "// @ts-ignore\nclass plataforma5 extends Actor {\n    iniciar() {\n\n    }\n}"
+            },
+            {
+                "nombre": "moneda",
+                "codigo": "// @ts-ignore\nclass moneda extends Actor {\n  iniciar() {\n    this.animacion = \"moneda\";\n\n  }\n\n  //cuando_comienza_una_colision(actor: Actor) {\n  //if (actor.tiene_etiqueta(\"plataforma\")) this.eliminar();\n  // }\n\n  cuando_colisiona(actor: Actor) {\n    if (actor.tiene_etiqueta(\"plataforma\")) this.eliminar();\n  }\n\n}"
+            },
+            {
+                "nombre": "llave",
+                "codigo": "// @ts-ignore\nclass llave extends Actor {\n\n  iniciar() {\n    this.imagen = \"imagenes:objetos/llave\";\n  }\n}\n"
+            },
+            {
+                "nombre": "base",
+                "codigo": "// @ts-ignore\nclass base extends Actor {\n\n  iniciar() {\n    //this.imagen = \"imagenes:objetos/llave\";\n  }\n\n  actualizar() {\n  }\n\n\n}"
+            },
+            {
+                "nombre": "plataforma6",
+                "codigo": "// @ts-ignore\nclass plataforma6 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma7",
+                "codigo": "// @ts-ignore\nclass plataforma7 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma8",
+                "codigo": "// @ts-ignore\nclass plataforma8 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma9",
+                "codigo": "// @ts-ignore\nclass plataforma9 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma10",
+                "codigo": "// @ts-ignore\nclass plataforma10 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma11",
+                "codigo": "// @ts-ignore\nclass plataforma11 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma12",
+                "codigo": "// @ts-ignore\nclass plataforma12 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma13",
+                "codigo": "// @ts-ignore\nclass plataforma13 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma14",
+                "codigo": "// @ts-ignore\nclass plataforma14 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma15",
+                "codigo": "// @ts-ignore\nclass plataforma15 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma16",
+                "codigo": "// @ts-ignore\nclass plataforma16 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma17",
+                "codigo": "// @ts-ignore\nclass plataforma17 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma18",
+                "codigo": "// @ts-ignore\nclass plataforma18 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma19",
+                "codigo": "// @ts-ignore\nclass plataforma19 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma20",
+                "codigo": "// @ts-ignore\nclass plataforma20 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "plataforma21",
+                "codigo": "// @ts-ignore\nclass plataforma21 extends Actor {\n\n  iniciar() { }\n}\n"
+            },
+            {
+                "nombre": "barra_de_energia1",
+                "codigo": "// @ts-ignore\nclass barra_de_energia1 extends PizarraBase {\n\n  barra_largo: number = 200;\n  barra_alto: number = 15;\n  vida_actual: number; // valor entre 0 y 100\n\n  private vida_anterior: number = 0;\n\n  iniciar() {\n    super.iniciar();\n    this.imagen = \"imagenes:basicos/invisible\";\n    this.vida_actual = this.proyecto.vida_actual;\n  }\n\n  actualizar() {\n    this.dibujar();\n    //this.vida_actual -= 0.2;\n  }\n\n  cuando_llega_el_mensaje_colision_plataforma() {\n    //Evita que le reste vida antes de que presione la tecla arriba\n    if (this.proyecto.estado_juego == \"jugando\") this.vida_actual -= 25; //Resta energia\n\n    if (this.vida_actual <= 0) {\n      //Eliminamos nuestra nave\n      let player = this.pilas.obtener_actor_por_nombre(\"TRN\");\n      player.eliminar();\n      this.proyecto.estado_juego = \"perdiste\";\n      this.pilas.cambiar_escena(\"escenaTransicion\");\n\n      //this.pilas.enviar_mensaje_global(\"energia_cero\");\n    }\n  }\n\n  dibujar() {\n    if (this.vida_actual === this.vida_anterior) {return;}\n\n    this.vida_actual = Math.max(0, this.vida_actual);\n    this.vida_actual = Math.min(100, this.vida_actual);\n    this.vida_anterior = this.vida_actual;\n    this.dibujar_barra();\n  }\n\n  private dibujar_barra() {\n    let vida = this.vida_actual;\n    let largo = this.barra_largo;\n    let alto = this.barra_alto;\n    let x = -largo / 2;\n    let y = +alto / 2;\n\n    this.limpiar();\n    this.dibujar_borde_de_rectangulo(x, y, largo, alto, \"blanco\", 4);\n    this.dibujar_rectangulo(x, y, largo, alto, \"rojo\");\n\n    this.dibujar_rectangulo(x, y, (largo / 100) * vida, alto, \"amarillo\");\n  }\n}\n"
+            },
+            {
+                "nombre": "llave1",
+                "codigo": "// @ts-ignore\nclass llave1 extends Actor {\n\n  iniciar() {\n    this.imagen = \"imagenes:objetos/llave\";\n  }\n}\n"
+            },
+            {
+                "nombre": "base1",
+                "codigo": "// @ts-ignore\nclass base1 extends Actor {\n\n  iniciar() {\n    //this.imagen = \"imagenes:objetos/llave\";\n  }\n\n  actualizar() {\n  }\n  \n\n}"
+            },
+            {
+                "nombre": "botonJugar",
+                "codigo": "// @ts-ignore\nclass botonJugar extends ActorTextoBase {\n\n  selector: any;\n\n  iniciar() {\n    //this.imagen = \"imagenes:redimensionables/gris\";\n    this.x = 0;\n    this.y = 50;\n    this.selector = this.pilas.obtener_actor_por_nombre(\"Selector\");\n  }\n\n  cuando_hace_click() {\n    //this.decir(\"¡has hecho click!\"); \n    this.realizar_animacion_de_pulsacion();\n    this.pilas.cambiar_escena(\"escena1\");\n  }\n\n  realizar_animacion_de_pulsacion() {\n    this.y -= 2;\n\n    this.pilas.luego(0.2, () => {\n      this.y += 2;\n    });\n  }\n\n  cuando_mueve() {\n    this.pilas.definir_cursor(\"pointer\");\n    this.selector.y = this.y;\n    this.fondo = \"imagenes:redimensionables/con_bordes_2\";\n  }\n\n  cuando_sale() {\n    this.pilas.definir_cursor(\"normal\");\n    this.fondo = \"imagenes:redimensionables/boton-amarillo\";\n  }\n}\n"
+            },
+            {
+                "nombre": "botonInstrucciones",
+                "codigo": "// @ts-ignore\nclass botonInstrucciones extends ActorTextoBase {\n\n  selector: any;\n\n  iniciar() {\n    this.x = 0;\n    this.y = -20;\n\n    this.selector = this.pilas.obtener_actor_por_nombre(\"Selector\");\n  }\n\n  cuando_hace_click() {\n    //this.decir(\"¡has hecho click!\");\n    this.realizar_animacion_de_pulsacion();\n    this.pilas.cambiar_escena(\"escena1\");\n  }\n\n  realizar_animacion_de_pulsacion() {\n    this.y -= 2;\n\n    this.pilas.luego(0.2, () => {\n      this.y += 2;\n    });\n  }\n\n  cuando_mueve() {\n    this.pilas.definir_cursor(\"pointer\");\n    this.selector.y = this.y;\n    this.fondo = \"imagenes:redimensionables/con_bordes_2\";\n  }\n\n  cuando_sale() {\n    this.pilas.definir_cursor(\"normal\");\n    this.fondo = \"imagenes:redimensionables/boton-amarillo\";\n  }\n}\n"
+            },
+            {
+                "nombre": "Titulo",
+                "codigo": "// @ts-ignore\nclass Titulo extends ActorTextoBase {\n}\n"
+            },
+            {
+                "nombre": "Selector",
+                "codigo": "// @ts-ignore\nclass Selector extends Actor {\n\n  POS1 = 50;\n  //botonJugar = this.pilas.obtener_actor_por_nombre(\"botonJugar\"); //50;\n  POS2 = -20;\n  //botonJugar: any;\n\n  iniciar() {\n    this.x = -100;//-70;\n    this.y = this.POS1;\n  }\n\n  actualizar() {\n    var botonJugar = this.pilas.obtener_actor_por_nombre(\"botonJugar\");\n    var botonInstrucciones = this.pilas.obtener_actor_por_nombre(\"botonInstrucciones\");\n\n    //Cambia la imagen de los botones\n    if (this.y == botonJugar.y) {\n    botonJugar.fondo = \"imagenes:redimensionables/boton-amarillo\";\n    } else { botonJugar.fondo = \"imagenes:redimensionables/con_bordes_2\"; }\n\n    if (this.y == botonInstrucciones.y) {\n    botonInstrucciones.fondo = \"imagenes:redimensionables/boton-amarillo\";\n    } else { botonInstrucciones.fondo = \"imagenes:redimensionables/con_bordes_2\"; }\n\n    this.seleccion();\n\n  }\n\n  seleccion() {\n    //Cambia posicion\n    if (this.pilas.control.arriba) this.y = this.POS1;\n    if (this.pilas.control.abajo) this.y = this.POS2;\n\n    //Seleciona la escena al pulsar ESPACIO\n    if (this.pilas.control.espacio) {\n      if (this.y === this.POS1) this.pilas.cambiar_escena(\"escena1\");\n      if (this.y === this.POS2) this.pilas.cambiar_escena(\"escena1\");\n    }\n\n  }\n\n  cuando_mueve() {\n    //this.pilas.definir_cursor(\"pointer\");\n    this.sprite.setTint(0xff0000);\n  }\n\n  cuando_sale() {\n    //this.pilas.definir_cursor(\"normal\");\n    this.sprite.setTint(0x00ff00);\n  }\n\n}\n"
+            },
+            {
+                "nombre": "texto",
+                "codigo": "// @ts-ignore\nclass texto extends ActorTextoBase {\n\n  iniciar() {\n    //this.imagen = \"imagenes:redimensionables/gris\";\n    this.x = 0;\n    this.y = 0;\n  }\n\n  actualizar() {\n    this.texto = this.proyecto.estado_juego;\n  }\n}"
+            },
+            {
+                "nombre": "plataforma22",
+                "codigo": "// @ts-ignore\nclass plataforma22 extends Actor {\n\n  iniciar() {}\n}\n"
+            },
+            {
+                "nombre": "base2",
+                "codigo": "// @ts-ignore\nclass base2 extends Actor {\n\n  iniciar() {\n    //this.imagen = \"imagenes:objetos/llave\";\n  }\n\n  actualizar() {\n  }\n\n\n}"
+            },
+            {
+                "nombre": "Indicaciones",
+                "codigo": "// @ts-ignore\nclass Indicaciones extends ActorTextoBase {\n}\n"
             }
         ],
-        "proyecto": "class Proyecto {\n    iniciar() {\n    }\n}"
+        "proyecto": "class Proyecto {\n  llave_obtenida = false;\n  estado_juego = \"\";\n  numero_escena = 0;\n  vida_actual = 100;\n\n  iniciar() {\n  }\n\n  //cuando_llega_el_mensaje_llave_obtenida() {\n  //this.llave_obtenida = true;\n  //}\n}"
     },
     "escenas": [
         {
@@ -562,7 +690,7 @@
             "id": 1,
             "ancho": 600,
             "alto": 800,
-            "camara_x": 0,
+            "camara_x": 5.718283425290224,
             "camara_y": 0,
             "gravedad_x": 0,
             "gravedad_y": 0.5,
@@ -627,37 +755,8 @@
                     "lasers": []
                 },
                 {
-                    "activo": false,
-                    "x": -61,
-                    "y": 57,
-                    "z": 0,
-                    "habilidades": [],
-                    "imagen": "imagenes:objetos/pelota",
-                    "centro_x": 0.5,
-                    "centro_y": 0.5,
-                    "rotacion": 0,
-                    "escala_x": 1,
-                    "escala_y": 1,
-                    "transparencia": 0,
-                    "etiqueta": "actor",
-                    "espejado": false,
-                    "espejado_vertical": false,
-                    "figura": "circulo",
-                    "figura_dinamica": true,
-                    "figura_ancho": 100,
-                    "figura_alto": 100,
-                    "figura_radio": 25,
-                    "figura_sin_rotacion": false,
-                    "figura_rebote": 1,
-                    "figura_sensor": false,
-                    "id": 1278,
-                    "nombre": "pelota",
-                    "sensores": [],
-                    "lasers": []
-                },
-                {
                     "x": 5.718283425290224,
-                    "y": -357.8046257027154,
+                    "y": -365,
                     "z": 0,
                     "imagen": "imagenes:nave/nave_reposo",
                     "centro_x": 0.5,
@@ -666,7 +765,7 @@
                     "escala_x": 1,
                     "escala_y": 1,
                     "transparencia": 0,
-                    "etiqueta": "actor",
+                    "etiqueta": "player",
                     "espejado": false,
                     "espejado_vertical": false,
                     "figura": "rectangulo",
@@ -674,13 +773,13 @@
                     "figura_ancho": 20,
                     "figura_alto": 20,
                     "figura_radio": 11,
-                    "figura_sin_rotacion": false,
-                    "figura_rebote": 1,
+                    "figura_sin_rotacion": true,
+                    "figura_rebote": 0.6,
                     "figura_sensor": false,
                     "es_texto": false,
                     "texto_con_borde": false,
                     "id": 10294635782981772,
-                    "activo": true,
+                    "activo": false,
                     "nombre": "TRN",
                     "habilidades": [],
                     "sensores": [],
@@ -688,7 +787,7 @@
                     "carpeta": 0.4804400059990399
                 },
                 {
-                    "x": 217.67397971219611,
+                    "x": 192.377537024449,
                     "y": 374.5222929936306,
                     "z": 0,
                     "imagen": "imagenes:basicos/barra_de_energia",
@@ -863,27 +962,1023 @@
                     "nombre": "plataforma5",
                     "sensores": [],
                     "lasers": []
+                },
+                {
+                    "x": 88.32271762208069,
+                    "y": -58.59872611464971,
+                    "z": 0,
+                    "imagen": "imagenes:objetos/moneda",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "moneda",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "circulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 10,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": true,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 17099716874515400,
+                    "activo": true,
+                    "nombre": "moneda",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 144.37367303609312,
+                    "y": 236.94267515923565,
+                    "z": 0,
+                    "imagen": "imagenes:objetos/llave",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "llave",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "circulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 21,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": true,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 12820977391189354,
+                    "activo": true,
+                    "nombre": "llave",
+                    "habilidades": [
+                        "oscilar rotacion"
+                    ],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 59.44798301486196,
+                    "y": -338.8535031847133,
+                    "z": 1,
+                    "imagen": "bloques:plataformas/plataforma-50",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "base",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 64,
+                    "figura_alto": 64,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": true,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 15981399973372410,
+                    "activo": true,
+                    "nombre": "base",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
                 }
             ],
             "carpetas": [
                 {
                     "nombre": "player",
                     "id": 0.4804400059990399,
-                    "abierta": true
+                    "abierta": false
                 }
             ]
         },
         {
             "nombre": "escena2",
             "id": 2,
-            "ancho": 1000,
-            "alto": 1000,
+            "ancho": 600,
+            "alto": 800,
+            "camara_x": 0,
+            "camara_y": 0,
+            "gravedad_x": 0,
+            "gravedad_y": 0.5,
+            "fondo": "decoracion:fondos/fondo-espacio_1",
+            "actores": [
+                {
+                    "x": 28.107158541941203,
+                    "y": -344.6640316205535,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 40,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 11241037089217512,
+                    "activo": true,
+                    "nombre": "plataforma6",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 189.02503293807644,
+                    "y": -277.102766798419,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 40,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 17016691359982888,
+                    "activo": true,
+                    "nombre": "plataforma7",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 301.3447518664909,
+                    "y": -192.91304347826087,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 40,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 14081873708179204,
+                    "activo": true,
+                    "nombre": "plataforma8",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 197.42687747035575,
+                    "y": -381.1554677206851,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 40,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 14552675386508596,
+                    "activo": true,
+                    "nombre": "plataforma9",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 265.96267018006176,
+                    "y": -235.155467720685,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 40,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 15658268480242320,
+                    "activo": true,
+                    "nombre": "plataforma10",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": -174.26965305226173,
+                    "y": -382.99341238471675,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 40,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 13411920386271420,
+                    "activo": true,
+                    "nombre": "plataforma11",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": -211.2678963548529,
+                    "y": -190.536231884058,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 40,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 15615316563604604,
+                    "activo": true,
+                    "nombre": "plataforma12",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": -184.23056653491443,
+                    "y": -148.20948616600788,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 40,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 15458400030036314,
+                    "activo": true,
+                    "nombre": "plataforma13",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 339.2002635046115,
+                    "y": -152.18972332015812,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 40,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 14402612757681292,
+                    "activo": true,
+                    "nombre": "plataforma14",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": -151.89108476065,
+                    "y": -106.01976284585021,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 40,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 14594100254813836,
+                    "activo": true,
+                    "nombre": "plataforma15",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": -197.86078173034673,
+                    "y": -28.80368906455851,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 3,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 115,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 17422394771695008,
+                    "activo": true,
+                    "nombre": "plataforma16",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 221.87878787878788,
+                    "y": 134.1607378129118,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 3,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 115,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 17261992799961452,
+                    "activo": true,
+                    "nombre": "plataforma17",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": -189.0733421168203,
+                    "y": 340.8208168642951,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 3,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 115,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 11202568545857862,
+                    "activo": true,
+                    "nombre": "plataforma18",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": -251.78041282389108,
+                    "y": 87.59156785243744,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 3,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 115,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 12541387234167762,
+                    "activo": true,
+                    "nombre": "plataforma19",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 291.13043478260977,
+                    "y": 16.588932806324124,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 3,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 115,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 15546966122792376,
+                    "activo": true,
+                    "nombre": "plataforma20",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 161.33948177426458,
+                    "y": 250.50461133069828,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 3,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 115,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 18453154148271904,
+                    "activo": true,
+                    "nombre": "plataforma21",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 185.9568079950244,
+                    "y": 358.1586566299942,
+                    "z": 0,
+                    "imagen": "imagenes:basicos/barra_de_energia",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 10291100326786304,
+                    "activo": true,
+                    "nombre": "barra_de_energia1",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 72.65392781316308,
+                    "y": 340.50955414012736,
+                    "z": 0,
+                    "imagen": "imagenes:objetos/llave",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "llave",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "circulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 21,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": true,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 15263641298132968,
+                    "activo": true,
+                    "nombre": "llave1",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": -199.10828025477713,
+                    "y": -329.55414012738845,
+                    "z": 0,
+                    "imagen": "bloques:plataformas/plataforma-50",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "base",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 64,
+                    "figura_alto": 64,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": true,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 19023745538693930,
+                    "activo": true,
+                    "nombre": "base1",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                }
+            ]
+        },
+        {
+            "id": 19690068156557030,
+            "nombre": "Menu",
+            "ancho": 600,
+            "alto": 800,
+            "camara_x": 0,
+            "camara_y": 0,
+            "gravedad_x": 0,
+            "gravedad_y": 1,
+            "fondo": "decoracion:fondos/fondo-espacio_2",
+            "actores": [
+                {
+                    "x": 0,
+                    "y": 50,
+                    "z": -10,
+                    "imagen": "imagenes:basicos/invisible",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1.3,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": true,
+                    "texto_con_borde": false,
+                    "fondo": "imagenes:redimensionables/boton-amarillo",
+                    "texto": "Jugar",
+                    "color": "black",
+                    "fuente": "color-negro",
+                    "id": 11828828520193728,
+                    "activo": true,
+                    "nombre": "botonJugar",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 0,
+                    "y": -20,
+                    "z": -10,
+                    "imagen": "imagenes:basicos/invisible",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": true,
+                    "texto_con_borde": false,
+                    "fondo": "imagenes:redimensionables/con_bordes_2",
+                    "texto": "Instrucciones",
+                    "color": "black",
+                    "fuente": "color-negro",
+                    "id": 12191018978316564,
+                    "activo": true,
+                    "nombre": "botonInstrucciones",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 0,
+                    "y": 219.10828025477704,
+                    "z": -10,
+                    "imagen": "imagenes:basicos/invisible",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": true,
+                    "texto_con_borde": false,
+                    "texto": "Gravedad",
+                    "fuente": "color-blanco-con-sombra-grande",
+                    "id": 19523725384074336,
+                    "activo": true,
+                    "nombre": "Titulo",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": [],
+                    "fondo": "decoracion:fondos/fondo-azul-oscuro"
+                },
+                {
+                    "x": -100,
+                    "y": 50,
+                    "z": 0,
+                    "imagen": "bloques:items/item-14",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 15794178692403836,
+                    "activo": true,
+                    "nombre": "Selector",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                },
+                {
+                    "x": 1.5890652557318958,
+                    "y": -258.31746031746036,
+                    "z": -10,
+                    "imagen": "imagenes:basicos/invisible",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 0.8,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": true,
+                    "texto_con_borde": false,
+                    "texto": "Usa mouse o teclado para seleccionar",
+                    "fuente": "pixel-color-blanco",
+                    "id": 10412514651153964,
+                    "activo": true,
+                    "nombre": "Indicaciones",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": [],
+                    "fondo": "decoracion:fondos/fondo-azul-oscuro"
+                }
+            ]
+        },
+        {
+            "id": 14455110103651704,
+            "nombre": "escenaTransicion",
+            "ancho": 600,
+            "alto": 800,
+            "camara_x": 0,
+            "camara_y": 0,
+            "gravedad_x": 0,
+            "gravedad_y": 1,
+            "fondo": "decoracion:fondos/fondo-espacio_1",
+            "actores": [
+                {
+                    "x": 0,
+                    "y": 0,
+                    "z": -10,
+                    "imagen": "imagenes:basicos/invisible",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 3,
+                    "escala_y": 3,
+                    "transparencia": 0,
+                    "etiqueta": "actor",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "",
+                    "figura_dinamica": true,
+                    "figura_ancho": 100,
+                    "figura_alto": 100,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": false,
+                    "es_texto": true,
+                    "texto_con_borde": false,
+                    "texto": "Estado juego",
+                    "fuente": "color-blanco-con-sombra-chico",
+                    "id": 18026970473174544,
+                    "activo": true,
+                    "nombre": "texto",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                }
+            ]
+        },
+        {
+            "id": 10069769768226806,
+            "nombre": "escena3",
+            "ancho": 600,
+            "alto": 800,
             "camara_x": 0,
             "camara_y": 0,
             "gravedad_x": 0,
             "gravedad_y": 1,
             "fondo": "decoracion:fondos/fondo-plano",
-            "actores": []
+            "actores": [
+                {
+                    "x": -18.26965305226196,
+                    "y": -386.824769433465,
+                    "z": 0,
+                    "imagen": "imagenes:plataformas/plataforma",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "plataforma",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 250,
+                    "figura_alto": 40,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 0,
+                    "figura_sensor": false,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 18849315896344624,
+                    "activo": true,
+                    "nombre": "plataforma22",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": [],
+                    "carpeta": 0.8323520437960148
+                },
+                {
+                    "x": -114.4618156083126,
+                    "y": -334.7978818928693,
+                    "z": 0,
+                    "imagen": "bloques:plataformas/plataforma-50",
+                    "centro_x": 0.5,
+                    "centro_y": 0.5,
+                    "rotacion": 0,
+                    "escala_x": 1,
+                    "escala_y": 1,
+                    "transparencia": 0,
+                    "etiqueta": "base",
+                    "espejado": false,
+                    "espejado_vertical": false,
+                    "figura": "rectangulo",
+                    "figura_dinamica": false,
+                    "figura_ancho": 64,
+                    "figura_alto": 64,
+                    "figura_radio": 40,
+                    "figura_sin_rotacion": false,
+                    "figura_rebote": 1,
+                    "figura_sensor": true,
+                    "es_texto": false,
+                    "texto_con_borde": false,
+                    "id": 18186817048315496,
+                    "activo": true,
+                    "nombre": "base2",
+                    "habilidades": [],
+                    "sensores": [],
+                    "lasers": []
+                }
+            ],
+            "carpetas": [
+                {
+                    "nombre": "plataformas",
+                    "id": 0.8323520437960148,
+                    "abierta": false
+                }
+            ]
         }
     ],
     "fps": 60,
@@ -925,5 +2020,412 @@
             "nombre": "comer",
             "ruta": "sonidos/comer.mp3"
         }
+    ],
+    "bloques": {
+        "proyecto": {
+            "texto": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"ZC`*TK^}PI+^~52^ak!H\" x=\"35\" y=\"44\"></block></xml>",
+            "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('ZC`*TK^}PI+^~52^ak!H', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n"
+        },
+        "escenas": [
+            {
+                "nombre": "escena1",
+                "bloques": {
+                    "texto": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"escena_al_iniciar\" id=\"ms2+If6B9Dl^C;YsS/{x\" x=\"-225\" y=\"-202\"></block><block type=\"escena_cuando_hace_click\" id=\"=UY{}h^MjrUa!2]Q!d*C\" x=\"-224\" y=\"-111\"></block><block type=\"escena_al_actualizar\" id=\"3oE27p+:PzlhcbX-XBVe\" x=\"-221\" y=\"-18\"></block></xml>",
+                    "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('ms2+If6B9Dl^C;YsS/{x', this.id);\n}\nescena._bloques_al_iniciar = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('=UY{}h^MjrUa!2]Q!d*C', this.id);\n}\nescena._bloques_cuando_hace_click = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('3oE27p+:PzlhcbX-XBVe', this.id);\n}\nescena._bloques_al_actualizar = function() {\n\n  };"
+                }
+            },
+            {
+                "nombre": "escena2",
+                "bloques": {
+                    "texto": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"escena_al_iniciar\" id=\"ms2+If6B9Dl^C;YsS/{x\" x=\"-225\" y=\"-202\"></block><block type=\"escena_cuando_hace_click\" id=\"=UY{}h^MjrUa!2]Q!d*C\" x=\"-224\" y=\"-111\"></block><block type=\"escena_al_actualizar\" id=\"3oE27p+:PzlhcbX-XBVe\" x=\"-221\" y=\"-18\"></block></xml>",
+                    "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('ms2+If6B9Dl^C;YsS/{x', this.id);\n}\nescena._bloques_al_iniciar = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('=UY{}h^MjrUa!2]Q!d*C', this.id);\n}\nescena._bloques_cuando_hace_click = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('3oE27p+:PzlhcbX-XBVe', this.id);\n}\nescena._bloques_al_actualizar = function() {\n\n  };"
+                }
+            },
+            {
+                "nombre": "Menu",
+                "bloques": {
+                    "texto": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"escena_al_iniciar\" id=\"ms2+If6B9Dl^C;YsS/{x\" x=\"-225\" y=\"-202\"></block><block type=\"escena_cuando_hace_click\" id=\"=UY{}h^MjrUa!2]Q!d*C\" x=\"-224\" y=\"-111\"></block><block type=\"escena_al_actualizar\" id=\"3oE27p+:PzlhcbX-XBVe\" x=\"-221\" y=\"-18\"></block></xml>",
+                    "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('ms2+If6B9Dl^C;YsS/{x', this.id);\n}\nescena._bloques_al_iniciar = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('=UY{}h^MjrUa!2]Q!d*C', this.id);\n}\nescena._bloques_cuando_hace_click = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('3oE27p+:PzlhcbX-XBVe', this.id);\n}\nescena._bloques_al_actualizar = function() {\n\n  };"
+                }
+            },
+            {
+                "nombre": "escenaTransicion",
+                "bloques": {
+                    "texto": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"escena_al_iniciar\" id=\"ms2+If6B9Dl^C;YsS/{x\" x=\"-225\" y=\"-202\"></block><block type=\"escena_cuando_hace_click\" id=\"=UY{}h^MjrUa!2]Q!d*C\" x=\"-224\" y=\"-111\"></block><block type=\"escena_al_actualizar\" id=\"3oE27p+:PzlhcbX-XBVe\" x=\"-221\" y=\"-18\"></block></xml>",
+                    "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('ms2+If6B9Dl^C;YsS/{x', this.id);\n}\nescena._bloques_al_iniciar = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('=UY{}h^MjrUa!2]Q!d*C', this.id);\n}\nescena._bloques_cuando_hace_click = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('3oE27p+:PzlhcbX-XBVe', this.id);\n}\nescena._bloques_al_actualizar = function() {\n\n  };"
+                }
+            },
+            {
+                "nombre": "escena3",
+                "bloques": {
+                    "texto": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"escena_al_iniciar\" id=\"ms2+If6B9Dl^C;YsS/{x\" x=\"-225\" y=\"-202\"></block><block type=\"escena_cuando_hace_click\" id=\"=UY{}h^MjrUa!2]Q!d*C\" x=\"-224\" y=\"-111\"></block><block type=\"escena_al_actualizar\" id=\"3oE27p+:PzlhcbX-XBVe\" x=\"-221\" y=\"-18\"></block></xml>",
+                    "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('ms2+If6B9Dl^C;YsS/{x', this.id);\n}\nescena._bloques_al_iniciar = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('=UY{}h^MjrUa!2]Q!d*C', this.id);\n}\nescena._bloques_cuando_hace_click = function(x, y, evento) {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('3oE27p+:PzlhcbX-XBVe', this.id);\n}\nescena._bloques_al_actualizar = function() {\n\n  };"
+                }
+            }
+        ],
+        "actores": [
+            {
+                "nombre": "plataforma",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "caja",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "pelota",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "TRN",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "barra_de_energia",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma1",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma2",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma3",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma4",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma5",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "moneda",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "llave",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "base",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "TRN1",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma6",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma7",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "plataforma8",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma9",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "plataforma10",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "plataforma11",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma12",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "plataforma13",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "plataforma14",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma15",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "plataforma16",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma17",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "plataforma18",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma19",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma20",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            },
+            {
+                "nombre": "plataforma21",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "barra_de_energia1",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "llave1",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "base1",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "botonJugar",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "botonInstrucciones",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "Titulo",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "Selector",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "moneda1",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "texto",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "pizarra",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "plataforma22",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "base2",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "logo",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "Indicaciones",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "texto1",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>",
+                "codigo_de_bloques": "if (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('^BS9[_V!D30$Klp?G]Nt', this.id);\n}\nactor._bloques_iniciar = function() {\n\n  };\n\nif (this.id) {\n\tthis.pilas.notificar_ejecucion_del_bloque('D[i2{g4SjDY+sAT7f=W@', this.id);\n}\nactor._bloques_actualizar = function() {\n\n  };\n"
+            },
+            {
+                "nombre": "pizarra",
+                "bloques": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"actor_inicia\" id=\"^BS9[_V!D30$Klp?G]Nt\" x=\"-217\" y=\"-205\"></block><block type=\"actor_actualizar\" id=\"D[i2{g4SjDY+sAT7f=W@\" x=\"-212\" y=\"-36\"></block></xml>"
+            }
+        ]
+    },
+    "plegados": {
+        "TRN": {
+            "cursorState": [
+                {
+                    "inSelectionMode": false,
+                    "selectionStart": {
+                        "lineNumber": 27,
+                        "column": 37
+                    },
+                    "position": {
+                        "lineNumber": 27,
+                        "column": 37
+                    }
+                }
+            ],
+            "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                    "lineNumber": 12,
+                    "column": 1
+                },
+                "firstPositionDeltaTop": -8
+            },
+            "contributionsState": {
+                "editor.contrib.folding": {
+                    "collapsedRegions": [
+                        {
+                            "startLineNumber": 55,
+                            "endLineNumber": 71
+                        }
+                    ],
+                    "lineCount": 124,
+                    "provider": "indent"
+                },
+                "editor.contrib.wordHighlighter": false
+            }
+        },
+        "texto": {
+            "cursorState": [
+                {
+                    "inSelectionMode": false,
+                    "selectionStart": {
+                        "lineNumber": 24,
+                        "column": 2
+                    },
+                    "position": {
+                        "lineNumber": 24,
+                        "column": 2
+                    }
+                }
+            ],
+            "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                    "lineNumber": 1,
+                    "column": 1
+                },
+                "firstPositionDeltaTop": 0
+            },
+            "contributionsState": {
+                "editor.contrib.folding": {
+                    "lineCount": 24,
+                    "provider": "indent"
+                },
+                "editor.contrib.wordHighlighter": false
+            }
+        },
+        "escenaTransicion": {
+            "cursorState": [
+                {
+                    "inSelectionMode": false,
+                    "selectionStart": {
+                        "lineNumber": 20,
+                        "column": 2
+                    },
+                    "position": {
+                        "lineNumber": 20,
+                        "column": 2
+                    }
+                }
+            ],
+            "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                    "lineNumber": 1,
+                    "column": 1
+                },
+                "firstPositionDeltaTop": 0
+            },
+            "contributionsState": {
+                "editor.contrib.folding": {
+                    "lineCount": 20,
+                    "provider": "indent"
+                },
+                "editor.contrib.wordHighlighter": false
+            }
+        },
+        "Selector": {
+            "cursorState": [
+                {
+                    "inSelectionMode": false,
+                    "selectionStart": {
+                        "lineNumber": 13,
+                        "column": 1
+                    },
+                    "position": {
+                        "lineNumber": 13,
+                        "column": 1
+                    }
+                }
+            ],
+            "viewState": {
+                "scrollLeft": 0,
+                "firstPosition": {
+                    "lineNumber": 1,
+                    "column": 1
+                },
+                "firstPositionDeltaTop": 0
+            },
+            "contributionsState": {
+                "editor.contrib.folding": {
+                    "collapsedRegions": [
+                        {
+                            "startLineNumber": 42,
+                            "endLineNumber": 44
+                        },
+                        {
+                            "startLineNumber": 47,
+                            "endLineNumber": 49
+                        }
+                    ],
+                    "lineCount": 53,
+                    "provider": "indent"
+                },
+                "editor.contrib.wordHighlighter": false
+            }
+        }
+    },
+    "etiquetas": [
+        "pilas"
     ]
 }
